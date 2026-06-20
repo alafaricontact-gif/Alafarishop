@@ -1,1 +1,562 @@
-<!DOCTYPE html> <html lang="ar" dir="rtl"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>AlaFari Shop - الكرسي الهوائي المريح</title> <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"> <style> :root { /* New coordinated color scheme based on logo and product */ --primary: #1E7F87; /* Rich Teal from Logo */ --primary-dark: #155D64; /* Deeper Teal */ --secondary: #D6972E; /* Gold from Logo */ --secondary-accent: #EAC781; /* Soft Gold Accent */ --gold: #D6972E; /* Same as secondary for stars, highlights */ --dark: #1a1a1a; --light: #ffffff; --off-white: #fcfcfc; --gray: #717171; --whatsapp: #25D366; --whatsapp-dark: #1EBE5D; --cta: var(--primary); /* CTA color is now rich teal */ --cta-gold: var(--secondary); /* Use gold for highlights and borders */ } * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; } body { background-color: var(--light); color: var(--dark); line-height: 1.6; } .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 0 20px rgba(0,0,0,0.05); overflow: hidden; } /* Header */ header { text-align: center; padding: 10px 15px; background-color: var(--dark); color: white; border-bottom: 2px solid var(--gold); } header .logo { max-width: 80px; /* Logo is small and elegant */ display: block; margin: 0 auto; } /* Hero Section */ .hero { padding: 20px 20px 0; text-align: center; } .hero h1 { font-size: 1.8rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; line-height: 1.3; } .hero .subtitle { font-size: 1.1rem; color: var(--gray); margin-bottom: 20px; } .hero img { width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin-bottom: 15px; } /* Trust Badges */ .trust-badges { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; } .trust-badge { background-color: #e6f7f6; /* Soft Teal Background */ color: var(--primary); /* Rich Teal Text */ padding: 8px 15px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 5px; border: 1px solid var(--secondary-accent); /* Soft Gold Accent Border */ } /* Highlight 3 Pieces */ .highlight-box { background-color: #fff9e6; /* Soft Gold Background */ border: 2px dashed var(--gold); /* Gold dashed border */ padding: 15px; border-radius: 10px; margin: 20px 0; text-align: center; font-weight: 700; } .highlight-box span { color: #b77f24; /* Deeper Gold Text */ font-size: 1.3rem; } /* Pricing Badge */ .pricing { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 15px 0 25px; background: #fffcf0; /* Lightest gold */ padding: 15px; border-radius: 10px; border: 2px dashed var(--gold); } .old-price { text-decoration: line-through; color: var(--gray); font-size: 1.2rem; } .new-price { font-size: 2.2rem; font-weight: 800; color: var(--primary); /* Primary Teal color for new price */ } /* CTA Button */ .btn { display: block; width: 90%; margin: 0 auto; padding: 15px; text-align: center; background-color: var(--primary); color: white; font-size: 1.3rem; font-weight: 700; border-radius: 50px; text-decoration: none; box-shadow: 0 5px 15px rgba(30, 127, 135, 0.4); /* Teal shadow */ transition: all 0.3s ease; border: none; cursor: pointer; animation: pulse 2s infinite; } @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } } .btn:hover { background-color: var(--primary-dark); } .btn-whatsapp { background-color: var(--whatsapp); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); animation: none; } .btn-whatsapp:hover { background-color: var(--whatsapp-dark); transform: translateY(-2px); } /* Features Section */ .features { padding: 30px 20px; background-color: #fcfcfc; border-top: 1px solid #eee; border-bottom: 1px solid #eee; margin-top: 30px; } .feature-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; } .feature-icon { background-color: #e6f7f6; /* Soft Teal Background */ color: var(--primary); /* Rich Teal Icon */ width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid var(--secondary-accent); } .feature-text h3 { font-size: 1.2rem; margin-bottom: 5px; color: var(--dark); } .feature-text p { color: var(--gray); font-size: 1rem; } /* Reviews Section */ .reviews { padding: 30px 20px; } .section-title { text-align: center; font-size: 1.5rem; font-weight: 800; margin-bottom: 25px; position: relative; } .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--gold); /* Gold underlines the titles */ margin: 10px auto 0; border-radius: 2px; } .review-card { background: white; border: 1px solid #eee; border-radius: 15px; padding: 15px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); position: relative; /* For reply positioning */ } .reviewer { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; } .reviewer-avatar { width: 40px; height: 40px; background-color: var(--primary); /* Teal Avatar */ color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; } .reviewer strong { text-transform: capitalize; /* Ensure names start with capital letter */ } .stars { color: var(--gold); /* Deep Gold Stars */ font-size: 1.1rem; } .review-text { font-size: 0.95rem; color: var(--gray); margin-bottom: 15px; font-style: italic; } .review-img { width: 100%; border-radius: 10px; margin-bottom: 15px; } /* Reply Section (New) */ .reply-section { padding: 0 15px; margin-bottom: 25px; } .reply-form { background-color: #fcfcfc; border: 1px solid #eee; border-radius: 10px; padding: 15px; } .reply-textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 0.9rem; resize: none; margin-bottom: 10px; } .reply-textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(30, 127, 135, 0.2); } .reply-submit-btn { background-color: var(--light); color: var(--primary); border: 1px solid var(--primary); padding: 8px 15px; font-size: 0.9rem; border-radius: 50px; cursor: pointer; transition: all 0.3s; font-weight: 600; } .reply-submit-btn:hover { background-color: #e6f7f6; } /* Form Section */ .order-section { background-color: #f4fdf8; padding: 40px 20px; border-top: 3px solid var(--whatsapp); } .form-group { margin-bottom: 15px; } .form-group label { display: block; margin-bottom: 5px; font-weight: 700; color: var(--dark); } .form-control { width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; transition: all 0.3s; } .form-control:focus { outline: none; border-color: var(--whatsapp); box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.2); } /* Footer */ footer { text-align: center; padding: 20px; background-color: var(--dark); color: white; font-size: 0.9rem; border-top: 1px solid var(--gold); } .text-center { text-align: center; } .mb-2 { margin-bottom: 10px; } </style> </head> <body> <div class="container"> <header> <img src="1000085308.jpg" alt="AlaFari Shop Logo" class="logo"> </header> <section class="hero"> <h1>بغيتي الراحة فين ما مشيتي هاد الصيف؟</h1> <p class="subtitle">الراحة والأناقة مجموعين عند AlaFari Shop بأحسن ثمن!</p> <img src="1000085277.jpg" alt="الكرسي الهوائي المريح"> <!-- Trust Badges --> <div class="trust-badges"> <div class="trust-badge">🚚 التوصيل مجاني</div> <div class="trust-badge">🤝 الدفع عند الاستلام</div> </div> <!-- Highlight 3 Pieces --> <div class="highlight-box"> <span>🎁 باك فيه 3 ديال القطع!</span><br> (كرسي مريح + بوف للرجلين + بومبا مجانية) </div> <div class="pricing"> <div class="old-price">300 درهم</div> <div class="new-price">259 درهم</div> </div> <a href="#order-form" class="btn">اطلب ديالك دابا ⬇️</a> </section> <section class="features"> <h2 class="section-title">علاش هاد الكرسي غيهنيك؟</h2> <div class="feature-item"> <div class="feature-icon">✨</div> <div class="feature-text"> <h3>باك متكامل (3 قطع)</h3> <p>الباك تايجيو فيه 3 ديال القطع: كرسي، بوف للرجلين، وكيجي معاه البومبا ديالو باش توجدو فثواني.</p> </div> </div> <div class="feature-item"> <div class="feature-icon">🧳</div> <div class="feature-text"> <h3>خفيف وعملي</h3> <p>خفيف بزاف، كيتجمع فبلاصتو وتديه معاك فين ما بغيتي: للبحر، الغابة، أو غير فالدار.</p> </div> </div> <div class="feature-item"> <div class="feature-icon">🛋️</div> <div class="feature-text"> <h3>مريح وآمن</h3> <p>مريح بزاف فالتكيّة، وآمن حتى على الدراري الصغار بفضل الملمس ديالو الرطب والمخملي.</p> </div> </div> </section> <section class="reviews"> <h2 class="section-title">آراء الزبناء ديالنا</h2> <!-- Review 1 --> <div class="review-card"> <div class="reviewer"> <div class="reviewer-avatar">س</div> <div> <strong>sanae m.</strong> <div class="stars">★★★★★</div> </div> </div> <p class="review-text">"صراحة الكرسي مريح بزاف والملمس ديالو رطب. خديت اللون الأحمر وجا غزال فالدار، كيتنفخ بالزربة بالبومبا لي معاه لي جات فابور. شكرا AlaFari Shop!"</p> <img src="1000085291.jpg" alt="صورة الزبون" class="review-img"> </div> <!-- Reply section 1 (New) --> <div class="reply-section"> <div class="reply-form"> <textarea class="reply-textarea" placeholder="Rédigez votre réponse ici..."></textarea> <button type="submit" class="reply-submit-btn">Commenter</button> </div> </div> <!-- Review 2 --> <div class="review-card"> <div class="reviewer"> <div class="reviewer-avatar">ع</div> <div> <strong>othman b.</strong> <div class="stars">★★★★★</div> </div> </div> <p class="review-text">"توصيل سريع، والباكاج جا ناضي ومسدود مزيان فيه 3 دالبياسات. خديتو على قبل التخييم والبحر وهناني ديال بصح. التوصيل كان فابور بصح وخلصت تا شفت سلعتي. كنصح بيه."</p> <img src="1000085290.jpg" alt="صورة العلبة" class="review-img"> </div> <!-- Reply section 2 (New) --> <div class="reply-section"> <div class="reply-form"> <textarea class="reply-textarea" placeholder="Rédigez votre réponse ici..."></textarea> <button type="submit" class="reply-submit-btn">Commenter</button> </div> </div> </section> <section id="order-form" class="order-section"> <h2 class="section-title">عمر المعلومات للطلب</h2> <p class="text-center mb-2" style="color: var(--gray);">الطلب غادي يوصلك مباشرة للواتساب ديالنا. الدفع حتى تستلم المنتج ديالك.</p> <form onsubmit="sendToWhatsapp(event)"> <div class="form-group"> <label for="name">الاسم الكامل:</label> <input type="text" id="name" class="form-control" placeholder="اكتب اسمك هنا" required> </div> <div class="form-group"> <label for="phone">رقم الهاتف:</label> <input type="tel" id="phone" class="form-control" placeholder="مثال: 0600000000" required> </div> <div class="form-group"> <label for="city">المدينة:</label> <input type="text" id="city" class="form-control" placeholder="المدينة ديالك" required> </div> <div class="form-group"> <label for="address">العنوان (اختياري):</label> <textarea id="address" class="form-control" rows="2" placeholder="أدخل العنوان بالتفصيل"></textarea> </div> <div class="form-group mb-2"> <label for="color">اللون المفضل:</label> <select id="color" class="form-control"> <option value="رمادي/أسود">رمادي/أسود</option> <option value="أحمر">أحمر</option> <option value="أزرق">أزرق</option> <option value="بنفسجي">بنفسجي</option> </select> </div> <button type="submit" class="btn btn-whatsapp"> 🟢 تأكيد الطلب عبر واتساب </button> </form> </section> <footer> <p>جميع الحقوق محفوظة &copy; 2026 AlaFari Shop</p> </footer> </div> <script> function sendToWhatsapp(event) { event.preventDefault(); const name = document.getElementById('name').value; const phone = document.getElementById('phone').value; const city = document.getElementById('city').value; const address = document.getElementById('address').value; const color = document.getElementById('color').value; const phoneNumber = "212600000000"; // بدلو بالرقم ديالك let message = `السلام عليكم، بغيت نأكد الطلب ديالي من موقع AlaFari Shop:%0A%0A`; message += `📦 *المنتج:* الباك ديال الكرسي الهوائي (3 قطع: كرسي + بوف + بومبا)%0A`; message += `💰 *الثمن:* 259 درهم (التوصيل مجاني)%0A`; message += `🎨 *اللون المطلوب:* ${color}%0A`; message += `-------------------------%0A`; message += `👤 *الاسم:* ${name}%0A`; message += `📱 *رقم الهاتف:* ${phone}%0A`; message += `📍 *المدينة:* ${city}%0A`; if(address) { message += `🏠 *العنوان:* ${address}%0A`; } message += `%0A🤝 طريقة الدفع: الدفع عند الاستلام.`; const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`; window.open(whatsappUrl, '_blank'); } </script> </body> </html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlaFari Shop - الكرسي الهوائي المريح</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* New coordinated color scheme based on logo and product */
+            --primary: #1E7F87; /* Rich Teal from Logo */
+            --primary-dark: #155D64; /* Deeper Teal */
+            --secondary: #D6972E; /* Gold from Logo */
+            --secondary-accent: #EAC781; /* Soft Gold Accent */
+            --gold: #D6972E; /* Same as secondary for stars, highlights */
+            
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --off-white: #fcfcfc;
+            --gray: #717171;
+            
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1EBE5D;
+            
+            --cta: var(--primary); /* CTA color is now rich teal */
+            --cta-gold: var(--secondary); /* Use gold for highlights and borders */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 10px 15px;
+            background-color: var(--dark);
+            color: white;
+            border-bottom: 2px solid var(--gold);
+        }
+        header .logo {
+            max-width: 80px; /* Logo is small and elegant */
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 20px 20px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        .hero img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .trust-badge {
+            background-color: #e6f7f6; /* Soft Teal Background */
+            color: var(--primary); /* Rich Teal Text */
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid var(--secondary-accent); /* Soft Gold Accent Border */
+        }
+
+        /* Highlight 3 Pieces */
+        .highlight-box {
+            background-color: #fff9e6; /* Soft Gold Background */
+            border: 2px dashed var(--gold); /* Gold dashed border */
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: 700;
+        }
+        .highlight-box span {
+            color: #b77f24; /* Deeper Gold Text */
+            font-size: 1.3rem;
+        }
+
+        /* Pricing Badge */
+        .pricing {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0 25px;
+            background: #fffcf0; /* Lightest gold */
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px dashed var(--gold);
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+        .new-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary); /* Primary Teal color for new price */
+        }
+
+        /* CTA Button */
+        .btn {
+            display: block;
+            width: 90%;
+            margin: 0 auto;
+            padding: 15px;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(30, 127, 135, 0.4); /* Teal shadow */
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            animation: none;
+        }
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 30px 20px;
+            background-color: #fcfcfc;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-top: 30px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .feature-icon {
+            background-color: #e6f7f6; /* Soft Teal Background */
+            color: var(--primary); /* Rich Teal Icon */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            border: 1px solid var(--secondary-accent);
+        }
+        .feature-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        .feature-text p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 30px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--gold); /* Gold underlines the titles */
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        .review-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            position: relative; /* For reply positioning */
+        }
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary); /* Teal Avatar */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .reviewer strong {
+            text-transform: capitalize; /* Ensure names start with capital letter */
+        }
+        .stars {
+            color: var(--gold); /* Deep Gold Stars */
+            font-size: 1.1rem;
+        }
+        .review-text {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .review-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Reply Section (New) */
+        .reply-section {
+            padding: 0 15px;
+            margin-bottom: 25px;
+        }
+        .reply-form {
+            background-color: #fcfcfc;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .reply-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            resize: none;
+            margin-bottom: 10px;
+        }
+        .reply-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 127, 135, 0.2);
+        }
+        .reply-submit-btn {
+            background-color: var(--light);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .reply-submit-btn:hover {
+            background-color: #e6f7f6;
+        }
+
+        /* Form Section */
+        .order-section {
+            background-color: #f4fdf8;
+            padding: 40px 20px;
+            border-top: 3px solid var(--whatsapp);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--whatsapp);
+            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--dark);
+            color: white;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--gold);
+        }
+
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 10px; }
+    </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1527805495490671');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1527805495490671&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="1000085308.jpg" alt="AlaFari Shop Logo" class="logo">
+        </header>
+
+        <section class="hero">
+            <h1>بغيتي الراحة فين ما مشيتي هاد الصيف؟</h1>
+            <p class="subtitle">الراحة والأناقة مجموعين عند AlaFari Shop بأحسن ثمن!</p>
+            
+            <img src="1000085277.jpg" alt="الكرسي الهوائي المريح">
+            
+            <div class="trust-badges">
+                <div class="trust-badge">🚚 التوصيل مجاني</div>
+                <div class="trust-badge">🤝 الدفع عند الاستلام</div>
+            </div>
+
+            <div class="highlight-box">
+                <span>🎁 باك فيه 3 ديال القطع!</span><br>
+                (كرسي مريح + بوف للرجلين + بومبا مجانية)
+            </div>
+            
+            <div class="pricing">
+                <div class="old-price">300 درهم</div>
+                <div class="new-price">259 درهم</div>
+            </div>
+            
+            <a href="#order-form" class="btn">اطلب ديالك دابا ⬇️</a>
+        </section>
+
+        <section class="features">
+            <h2 class="section-title">علاش هاد الكرسي غيهنيك؟</h2>
+            
+            <div class="feature-item">
+                <div class="feature-icon">✨</div>
+                <div class="feature-text">
+                    <h3>باك متكامل (3 قطع)</h3>
+                    <p>الباك تايجيو فيه 3 ديال القطع: كرسي، بوف للرجلين، وكيجي معاه البومبا ديالو باش توجدو فثواني.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">🧳</div>
+                <div class="feature-text">
+                    <h3>خفيف وعملي</h3>
+                    <p>خفيف بزاف، كيتجمع فبلاصتو وتديه معاك فين ما بغيتي: للبحر، الغابة، أو غير فالدار.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">🛋️</div>
+                <div class="feature-text">
+                    <h3>مريح وآمن</h3>
+                    <p>مريح بزاف فالتكيّة، وآمن حتى على الدراري الصغار بفضل الملمس ديالو الرطب والمخملي.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <h2 class="section-title">آراء الزبناء ديالنا</h2>
+            
+            <div class="review-card">
+                <div class="reviewer">
+                    <div class="reviewer-avatar">س</div>
+                    <div>
+                        <strong>sanae m.</strong>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-text">"صراحة الكرسي مريح بزاف والملمس ديالو رطب. خديت اللون الأحمر وجا غزال فالدار، كيتنفخ بالزربة بالبومبا لي معاه لي جات فابور. شكرا AlaFari Shop!"</p>
+                <img src="1000085291.jpg" alt="صورة الزبون" class="review-img">
+            </div>
+            <div class="reply-section">
+                <div class="reply-form">
+                    <textarea class="reply-textarea" placeholder="Rédigez votre réponse ici..."></textarea>
+                    <button type="submit" class="reply-submit-btn">Commenter</button>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="reviewer">
+                    <div class="reviewer-avatar">ع</div>
+                    <div>
+                        <strong>othman b.</strong>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="review-text">"توصيل سريع، والباكاج جا ناضي ومسدود مزيان فيه 3 دالبياسات. خديتو على قبل التخييم والبحر وهناني ديال بصح. التوصيل كان فابور بصح وخلصت تا شفت سلعتي. كنصح بيه."</p>
+                <img src="1000085290.jpg" alt="صورة العلبة" class="review-img">
+            </div>
+            <div class="reply-section">
+                <div class="reply-form">
+                    <textarea class="reply-textarea" placeholder="Rédigez votre réponse ici..."></textarea>
+                    <button type="submit" class="reply-submit-btn">Commenter</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="order-form" class="order-section">
+            <h2 class="section-title">عمر المعلومات للطلب</h2>
+            <p class="text-center mb-2" style="color: var(--gray);">الطلب غادي يوصلك مباشرة للواتساب ديالنا. الدفع حتى تستلم المنتج ديالك.</p>
+            
+            <form onsubmit="sendToWhatsapp(event)">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل:</label>
+                    <input type="text" id="name" class="form-control" placeholder="اكتب اسمك هنا" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="مثال: 0600000000" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">المدينة:</label>
+                    <input type="text" id="city" class="form-control" placeholder="المدينة ديالك" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">العنوان (اختياري):</label>
+                    <textarea id="address" class="form-control" rows="2" placeholder="أدخل العنوان بالتفصيل"></textarea>
+                </div>
+
+                <div class="form-group mb-2">
+                    <label for="color">اللون المفضل:</label>
+                    <select id="color" class="form-control">
+                        <option value="رمادي/أسود">رمادي/أسود</option>
+                        <option value="أحمر">أحمر</option>
+                        <option value="أزرق">أزرق</option>
+                        <option value="بنفسجي">بنفسجي</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-whatsapp">
+                    🟢 تأكيد الطلب عبر واتساب
+                </button>
+            </form>
+        </section>
+
+        <footer>
+            <p>جميع الحقوق محفوظة &copy; 2026 AlaFari Shop</p>
+        </footer>
+    </div>
+
+    <script>
+        function sendToWhatsapp(event) {
+            event.preventDefault(); 
+            fbq('track', 'Lead');
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const address = document.getElementById('address').value;
+            const color = document.getElementById('color').value;
+            
+            const phoneNumber = "212708781407"; // بدلو بالرقم ديالك
+            
+            let message = `السلام عليكم، بغيت نأكد الطلب ديالي من موقع AlaFari Shop:%0A%0A`;
+            message += `- *المنتج:* الباك ديال الكرسي الهوائي (3 قطع: كرسي + بوف + بومبا)%0A`;
+            message += `- *الثمن:* 259 درهم (التوصيل مجاني)%0A`;
+            message += `- *اللون المطلوب:* ${color}%0A`;
+            message += `- *الاسم:* ${name}%0A`;
+            message += `- *رقم الهاتف:* ${phone}%0A`;
+            message += `- *المدينة:* ${city}%0A`;
+            if(address) {
+                message += `- *العنوان:* ${address}%0A`;
+            }
+            
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
