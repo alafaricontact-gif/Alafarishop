@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دروة الجمل الطبيعية - لعلاج آلام المفاصل والركبة</title>
     
+    <!-- Meta Pixel Code (كود البيكسل الجديد) -->
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -14,10 +15,13 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}
       (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1527805495490671'); // قم بتغيير YOUR_PIXEL_ID برقم البيكسل الحقيقي ديالك
+      fbq('init', '1527805495490671'); // تم وضع رقم البيكسل الجديد هنا مباشرة
       fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1527805495490671&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
 
     <style>
         :root {
@@ -297,7 +301,7 @@
             الثمن الحالي: 149 درهم فقط <span class="old-price">199 درهم</span>
         </div>
 
-        <h2>لماذا يفضل زبناؤنا هذا المرهم الطبيعي?</h2>
+        <h2>لماذا يفضل زبناؤنا هذا المرهم الطبيعي؟</h2>
         <div class="benefits">
             <div class="benefit-item">
                 <div class="benefit-icon">🌿</div>
@@ -374,6 +378,7 @@
         function sendToWhatsapp(event) {
             event.preventDefault();
             
+            // تتبع حدث الضغط على زر الشراء وإرساله لـ Meta Pixel
             if (typeof fbq === 'function') {
                 fbq('track', 'CamelBalmOrder'); 
             }
