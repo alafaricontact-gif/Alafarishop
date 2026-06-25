@@ -363,13 +363,8 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1557856569320485&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-
-
-
-    
 </head>
 <body>
-
     <div class="top-bar">
         🔥 الكمية محدودة جداً! التوصيل بالمجان إلى جميع المدن، والدفع عند الاستلام 🔥
     </div>
@@ -380,11 +375,10 @@ src="https://www.facebook.com/tr?id=1557856569320485&ev=PageView&noscript=1"
         </a>
     </div>
 
-    <div class="product-images">         
+    <div class="product-images">          
         <img src="main-image-1.webp" alt="السوار النحاسي المغناطيسي على اليد">
         <img src="main-image-1.jpg" alt="السوار النحاسي المغناطيسي على اليد">
         <img src="Image4.webp" alt="السوار النحاسي المغناطيسي">
-        
     </div>
 
     <div class="container">
@@ -514,6 +508,7 @@ src="https://www.facebook.com/tr?id=1557856569320485&ev=PageView&noscript=1"
         function sendToWhatsapp(event) {
             event.preventDefault();
             
+            // إضافة الـ Event الخاص بفيسبوك
             if (typeof fbq === 'function') {
                 fbq('track', 'Lead');
             }
