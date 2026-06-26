@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Robe pour Femme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #111111;
+            --card-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --gold-accent: #d4a373;
+            --whatsapp-green: #25D366;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; padding-bottom: 120px; }
+        
+        /* الشريط المتحرك */
+        .ticker { background-color: var(--gold-accent); color: #000; padding: 10px 0; font-weight: bold; overflow: hidden; white-space: nowrap; }
+        
+        .container { max-width: 500px; margin: 0 auto; padding: 15px; }
+        
+        /* اللوغو */
+        .logo-container { text-align: center; margin: 15px 0; }
+        .logo-container img { max-width: 150px; border-radius: 50%; border: 2px solid var(--gold-accent); }
+
+        .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .image-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+
+        .price-tag { text-align: center; margin: 25px 0; background: var(--card-dark); padding: 15px; border-radius: 12px; border: 1px dashed var(--gold-accent); }
+        .new-price { font-size: 28px; font-weight: 900; color: var(--gold-accent); }
+        
+        .description-box { background: var(--card-dark); padding: 20px; border-radius: 12px; margin-bottom: 25px; border-right: 4px solid var(--gold-accent); }
+        
+        /* الألوان */
+        .color-selection { margin: 20px 0; text-align: center; }
+        .color-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; }
+        .color-item { cursor: pointer; text-align: center; font-size: 11px; }
+        .color-swatch { width: 45px; height: 45px; border-radius: 8px; border: 2px solid #444; margin: 0 auto 5px; transition: 0.3s; }
+        input[type="radio"] { display: none; }
+        input[type="radio"]:checked + .color-swatch { border: 4px solid var(--gold-accent); transform: scale(1.1); }
+
+        /* الاستمارة */
+        .order-section { background: var(--card-dark); padding: 25px; border-radius: 12px; border: 1px solid #222; }
+        .label-style { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-light); }
+        .form-control { width: 100%; padding: 12px 15px; border: 1px solid #333; border-radius: 8px; font-size: 16px; background-color: #222; color: white; margin-bottom: 15px; }
+        
+        /* الزر العائم */
+        .sticky-btn-container { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.9); padding: 15px; text-align: center; z-index: 999; border-top: 1px solid #333; }
+        .submit-btn { width: 100%; max-width: 450px; background-color: var(--whatsapp-green); color: white; border: none; padding: 15px; font-size: 18px; font-weight: bold; border-radius: 8px; cursor: pointer; }
+        
+        footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="ticker">
+        <marquee behavior="scroll" direction="right" scrollamount="6">🚚 توصيل مجاني لجميع مدن المغرب | 🤝 الدفع عند الاستلام</marquee>
+    </div>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="1996-removebg-preview.png.jpg" alt="Logo">
+        </div>
+
+        <div class="image-grid">
+            <img src="Iimage1.png" alt="Robe 1">
+            <img src="Iimage2.png" alt="Robe 2">
+            <img src="Iimage13.png" alt="Robe 3">
+            <img src="Image5.png" alt="Robe 4">
+            <img src="Image6.png" alt="Robe 5">
+            <img src="Image3.png" alt="Robe 6">
+            <img src="Image7.png" alt="Robe 7">
+            <img src="imgage7.png" alt="Robe 8">
+        </div>
+
+        <h1>فستان نسائي أنيق وعصري</h1>
+        
+        <div class="price-tag">
+            <span class="new-price">169 درهم فقط</span>
+        </div>
+
+        <div class="description-box">
+            <h3>✨ لمسة من الأناقة والراحة هذا الصيف</h3>
+            <p>ثوب ممتاز وبارد، تصميم عصري، وجودة عالية.</p>
+        </div>
+
+        <div class="color-selection">
+            <p style="margin-bottom: 10px; color: var(--gold-accent); font-weight: bold;">اختر لونك المفضل:</p>
+            <div class="color-grid">
+                <label class="color-item"><input type="radio" name="color" value="وردي" checked onchange="updateFormColor(this.value)"><div class="color-swatch" style="background: #F52887;"></div>وردي</label>
+                <label class="color-item"><input type="radio" name="color" value="أزرق سماوي" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background: #5CB3FF;"></div>أزرق سماوي</label>
+                <label class="color-item"><input type="radio" name="color" value="بيج" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background: #EBDDE2;"></div>بيج</label>
+                <label class="color-item"><input type="radio" name="color" value="بنفسجي" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background: #B93B87;"></div>بنفسجي</label>
+                <label class="color-item"><input type="radio" name="color" value="أسود" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background: #000000;"></div>أسود</label>
+                <label class="color-item"><input type="radio" name="color" value="أحمر داكن" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background: #800517;"></div>أحمر</label>
+                <label class="color-item"><input type="radio" name="color" value="أزرق" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background: #488AC7;"></div>أزرق</label>
+                <label class="color-item"><input type="radio" name="color" value="برتقالي" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background: #F76541;"></div>برتقالي</label>
+            </div>
+        </div>
+
+        <div class="order-section">
+            <form onsubmit="sendToWhatsapp(event)">
+                <label class="label-style">الكمية والعرض:</label>
+                <select id="quantity" class="form-control">
+                    <option value="قطعة واحدة - 169 درهم">قطعة واحدة - 169 درهم</option>
+                    <option value="عرض قطعتين - 299 درهم">عرض قطعتين - 299 درهم 🔥</option>
+                </select>
+
+                <label class="label-style">الاسم الكامل:</label>
+                <input type="text" id="name" class="form-control" required>
+                
+                <label class="label-style">رقم الهاتف:</label>
+                <input type="tel" id="phone" class="form-control" placeholder="06XXXXXXXX" required>
+                
+                <label class="label-style">المدينة:</label>
+                <input type="text" id="city" class="form-control" required>
+                
+                <label class="label-style">العنوان:</label>
+                <input type="text" id="address" class="form-control" required>
+                
+                <label class="label-style">اللون:</label>
+                <input type="text" id="colorDisplay" class="form-control" value="وردي" readonly style="border: 1px solid var(--gold-accent);">
+                
+                <button type="submit" style="display:none;"></button>
+            </form>
+        </div>
+
+        <div class="description-box" style="margin-top: 30px;">
+            <h3>📸 تفاصيل المنتج عن قرب</h3>
+            <p>جودة لا تضاهى، اختاري الأفضل لنفسك.</p>
+            <div class="image-grid">
+                <img src="img1.jpeg" alt="تفاصيل 1">
+                <img src="img2.png" alt="تفاصيل 2">
+                <img src="img3.jpeg" alt="تفاصيل 3">
+                <img src="img4.jpeg" alt="تفاصيل 4">
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 جميع الحقوق محفوظة لمتجركم</p>
+        </footer>
+    </div>
+
+    <div class="sticky-btn-container">
+        <button class="submit-btn" onclick="document.querySelector('form').requestSubmit()">🛒 اطلب الآن عبر واتساب</button>
+    </div>
+
+    <script>
+        function updateFormColor(color) { document.getElementById('colorDisplay').value = color; }
+        function sendToWhatsapp(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const address = document.getElementById('address').value;
+            const color = document.getElementById('colorDisplay').value;
+            const quantity = document.getElementById('quantity').value;
+            window.location.href = `https://wa.me/212612414722?text=طلب:%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالمدينة: ${city}%0Aالعنوان: ${address}%0Aالكمية: ${quantity}%0Aاللون: ${color}`;
+        }
+    </script>
+</body>
+</html>
