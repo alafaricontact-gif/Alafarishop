@@ -176,6 +176,9 @@ src="https://www.facebook.com/tr?id=2715858068835095&ev=PageView&noscript=1"
         function updateFormColor(color) { document.getElementById('colorDisplay').value = color; }
         function sendToWhatsapp(event) {
             event.preventDefault();
+            
+            fbq('track', 'Lead');
+            
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const city = document.getElementById('city').value;
