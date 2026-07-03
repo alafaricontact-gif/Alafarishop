@@ -23,7 +23,6 @@
         .submit-btn { width: 100%; max-width: 450px; background-color: var(--whatsapp-green); color: white; border: none; padding: 15px; font-size: 18px; font-weight: bold; border-radius: 8px; cursor: pointer; }
         footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
         .promo-title { text-align: center; font-size: 24px; color: var(--gold-accent); margin-bottom: 10px; font-weight: 800; text-transform: uppercase; }
-        .desc-text { text-align: center; font-size: 16px; margin-bottom: 20px; color: #ccc; }
     </style>
 </head>
 <body>
@@ -66,22 +65,12 @@
 
                 <div id="robe-color-box">
                     <label class="label-style">لون الروبة:</label>
-                    <select id="robe-color" class="form-control">
-                        <option value="وردي">وردي</option>
-                        <option value="أسود">أسود</option>
-                        <option value="أزرق ملكي">أزرق ملكي</option>
-                        <option value="أزرق سماوي">أزرق سماوي</option>
-                    </select>
+                    <select id="robe-color" class="form-control"><option value="وردي">وردي</option><option value="أزرق سماوي">أزرق سماوي</option><option value="أسود">أسود</option></select>
                 </div>
 
                 <div id="pyj-color-box" style="display:none;">
                     <label class="label-style">لون البيجامة:</label>
-                    <select id="pyj-color" class="form-control">
-                        <option value="وردي">وردي</option>
-                        <option value="أسود">أسود</option>
-                        <option value="أبيض">أبيض</option>
-                        <option value="أزرق">أزرق</option>
-                    </select>
+                    <select id="pyj-color" class="form-control"><option value="أبيض">أبيض</option><option value="أسود">أسود</option><option value="أزرق">أزرق</option></select>
                 </div>
 
                 <input type="text" id="name" class="form-control" placeholder="الاسم الكامل" required>
@@ -107,6 +96,7 @@
         function sendToWhatsapp(event) {
             event.preventDefault();
             if (typeof fbq !== 'undefined') { fbq('track', 'Lead'); }
+            
             const product = document.getElementById('product-choice').value;
             const rColor = document.getElementById('robe-color').value;
             const pColor = document.getElementById('pyj-color').value;
@@ -114,7 +104,6 @@
             const phone = document.getElementById('phone').value;
             const city = document.getElementById('city').value;
             const address = document.getElementById('address').value;
-            const phone = document.getElementById('phone').value;
             
             let message = `طلب جديد:%0A- المنتج: ${product}`;
             if(product !== 'بيجامة') message += `%0A- لون الروبة: ${rColor}`;
