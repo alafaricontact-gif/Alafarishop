@@ -179,20 +179,34 @@ src="https://www.facebook.com/tr?id=2715858068835095&ev=PageView&noscript=1"
     </div>
 
     <script>
-        function updateFormColor(color) { document.getElementById('colorDisplay').value = color; }
-        function sendToWhatsapp(event) {
-            event.preventDefault();
-            
-            fbq('track', 'Lead');
-            
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const city = document.getElementById('city').value;
-            const address = document.getElementById('address').value;
-            const color = document.getElementById('colorDisplay').value;
-            const quantity = document.getElementById('quantity').value;
-            window.location.href = `https://wa.me/212708781407?text=طلب:%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالمدينة: ${city}%0Aالعنوان: ${address}%0Aالكمية: ${quantity}%0Aاللون: ${color}`;
+        function updateFormColor(color) { 
+        document.getElementById('colorDisplay').value = color; 
+    }
+
+    function sendToWhatsapp(event) {
+        // 1. هاد السطر كيتأكد بلي الـ Form صالحة (كلشي معمر) قبل ما يدير أي حاجة
+        if (!event.target.checkValidity()) {
+            return; // إلا كان شي حاجة ناقصة، الكود كيحبس هنا وما كيصيفط والو
         }
+        
+        event.preventDefault(); // كيحبس التصيفط العادي ديال الـ Form
+        
+        // 2. دابا عاد البيكسل كيخدم، يعني متأكدين 100% أن الزبون عمر كلشي
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead');
+        }
+        
+        // جلب المعلومات
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const city = document.getElementById('city').value;
+        const address = document.getElementById('address').value;
+        const color = document.getElementById('colorDisplay').value;
+        const quantity = document.getElementById('quantity').value;
+        
+        // التوجيه للواتساب
+        window.location.href = `https://wa.me/212708781407?text=طلب:%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالمدينة: ${city}%0Aالعنوان: ${address}%0Aالكمية: ${quantity}%0Aاللون: ${color}`;
+    }
     </script>
 </body>
 </html>
