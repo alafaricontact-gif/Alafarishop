@@ -158,6 +158,83 @@ p{
 
         </div>
 
+
+<!-- Section Choix de Taille -->
+<div class="size-selector-container" style="text-align: center; margin: 20px auto; max-width: 100%; dir: rtl;">
+    <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 10px;">
+        اختر المقاس (Sélectionnez la taille) :
+    </label>
+    
+    <div class="size-options" style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
+        <!-- Taille S -->
+        <label class="size-option">
+            <input type="radio" name="size" value="S" required>
+            <span class="size-btn">S</span>
+        </label>
+        
+        <!-- Taille M -->
+        <label class="size-option">
+            <input type="radio" name="size" value="M">
+            <span class="size-btn">M</span>
+        </label>
+        
+        <!-- Taille L -->
+        <label class="size-option">
+            <input type="radio" name="size" value="L" checked> <!-- Sélectionné par défaut -->
+            <span class="size-btn">L</span>
+        </label>
+        
+        <!-- Taille XL -->
+        <label class="size-option">
+            <input type="radio" name="size" value="XL">
+            <span class="size-btn">XL</span>
+        </label>
+        
+        <!-- Taille XXL -->
+        <label class="size-option">
+            <input type="radio" name="size" value="XXL">
+            <span class="size-btn">XXL</span>
+        </label>
+    </div>
+</div>
+
+<!-- Styles CSS intégrés -->
+<style>
+.size-option input[type="radio"] {
+    display: none; /* Cache le bouton radio classique */
+}
+
+.size-btn {
+    display: inline-block;
+    min-width: 48px;
+    padding: 10px 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+}
+
+/* Effet quand la taille est sélectionnée */
+.size-option input[type="radio"]:checked + .size-btn {
+    border-color: #000; /* Vous pouvez changer par la couleur de votre marque */
+    background-color: #000;
+    color: #fff;
+}
+
+/* Effet au survol sur PC */
+.size-btn:hover {
+    border-color: #999;
+}
+</style>
+
+
+
+        
         <div class="color-selection">
             <p style="margin-bottom: 10px; color: var(--gold-accent); font-weight: bold;">اختر لونك المفضل:</p>
             <div class="color-grid">
