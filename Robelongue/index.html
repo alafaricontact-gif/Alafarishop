@@ -339,7 +339,8 @@ p{
         const address = document.getElementById('address').value;
         const color = document.getElementById('colorDisplay').value;
         const quantity = document.getElementById('quantity').value;
-        
+        const selectedSizeInput = document.querySelector('input[name="size"]:checked');
+const size = selectedSizeInput ? selectedSizeInput.value : ''; // Récupère la valeur (S, M, L...)
         // التوجيه للواتساب
         window.location.href = `https://wa.me/212708781407?text=طلب:%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالمدينة: ${city}%0Aالعنوان: ${address}%0Aالكمية: ${quantity}%0Aاللون: ${color}`;
     }
