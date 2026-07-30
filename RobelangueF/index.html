@@ -26,7 +26,8 @@
         .logo-container img { max-width: 150px; border-radius: 50%; border: 2px solid var(--gold-accent); }
 
         .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
-        .image-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        /* Hauteur modifiée ici pour allonger les images */
+        .image-grid img { width: 100%; height: 320px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
 
         .price-tag { text-align: center; margin: 25px 0; background: var(--card-dark); padding: 15px; border-radius: 12px; border: 1px dashed var(--gold-accent); }
         .new-price { font-size: 28px; font-weight: 900; color: var(--gold-accent); }
@@ -53,8 +54,6 @@
         footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
     </style>
 
-
-
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -72,12 +71,6 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2715858068835095&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-
-
-
-
-
-
     
 </head>
 <body>
@@ -87,25 +80,25 @@ src="https://www.facebook.com/tr?id=2715858068835095&ev=PageView&noscript=1"
 
     <div class="container">
         <div class="logo-container">
-            <img src="1996-removebg-preview.png.jpg" alt="Logo">
+            <img src="1996-removebg-preview.webp" alt="Logo">
         </div>
 
         <div class="image-grid">
-            <img src="Iimage1.png" alt="Robe 1">
-            <img src="limage13.png" alt="Robe 3">
-            <img src="Image5.png" alt="Robe 4">
+            <img src="image1.webp" alt="Robe 1">
+            <img src="image13.webp" alt="Robe 3">
+            <img src="image5.webp" alt="Robe 4">
             
-            <img src="Image3.png" alt="Robe 6">
-            <img src="Image7.png" alt="Robe 7">
-            <img src="imgage7.png" alt="Robe 8">
+            <img src="Image3.webp" alt="Robe 6">
+            <img src="Image7.webp" alt="Robe 7">
+            <img src="imgage7.webp" alt="Robe 8">
         </div>
 
         <h1 style="text-align: center;">Robe moderne pour femme</h1>
         
         <div class="price-tag">
-    <span class="old-price">230 DH</span>
-    <span class="new-price">199 DH seulement</span>
-</div>
+            <span class="old-price">230 DH</span>
+            <span class="new-price">199 DH seulement</span>
+        </div>
 
 <style>
 .price-tag{
@@ -138,8 +131,8 @@ h3{
 }
 
 p{
-    line-height: 1.4;      /* Interligne à l'intérieur du paragraphe */
-    margin: 8px 0;         /* Petit espace entre les paragraphes */
+    line-height: 1.4;      
+    margin: 8px 0;         
 }
 </style>
 
@@ -158,7 +151,6 @@ Avec cette robe attirante, vous capterez tous les regards et resterez au sommet 
 
         </div>
 
-
 <!-- Section Choix de Taille -->
 <div class="size-selector-container" style="text-align: center; margin: 20px auto; max-width: 100%;">
     <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 10px;">
@@ -166,31 +158,26 @@ Avec cette robe attirante, vous capterez tous les regards et resterez au sommet 
     </label>
     
     <div class="size-options" style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
-        <!-- Taille S -->
         <label class="size-option">
             <input type="radio" name="size" value="S" required>
             <span class="size-btn">S</span>
         </label>
         
-        <!-- Taille M -->
         <label class="size-option">
             <input type="radio" name="size" value="M">
             <span class="size-btn">M</span>
         </label>
         
-        <!-- Taille L -->
         <label class="size-option">
-            <input type="radio" name="size" value="L" checked> <!-- Sélectionné par défaut -->
+            <input type="radio" name="size" value="L" checked>
             <span class="size-btn">L</span>
         </label>
         
-        <!-- Taille XL -->
         <label class="size-option">
             <input type="radio" name="size" value="XL">
             <span class="size-btn">XL</span>
         </label>
         
-        <!-- Taille XXL -->
         <label class="size-option">
             <input type="radio" name="size" value="XXL">
             <span class="size-btn">XXL</span>
@@ -198,10 +185,9 @@ Avec cette robe attirante, vous capterez tous les regards et resterez au sommet 
     </div>
 </div>
 
-<!-- Styles CSS intégrés -->
 <style>
 .size-option input[type="radio"] {
-    display: none; /* Cache le bouton radio classique */
+    display: none;
 }
 
 .size-btn {
@@ -219,52 +205,48 @@ Avec cette robe attirante, vous capterez tous les regards et resterez au sommet 
     user-select: none;
 }
 
-/* Effet quand la taille est sélectionnée */
 .size-option input[type="radio"]:checked + .size-btn {
-    border-color: #000; /* Vous pouvez changer par la couleur de votre marque */
+    border-color: #000;
     background-color: #000;
     color: #fff;
 }
 
-/* Effet au survol sur PC */
 .size-btn:hover {
     border-color: #999;
 }
 </style>
-
-
-
         
         <div class="color-selection">
             <p style="margin-bottom: 10px; color: var(--gold-accent); font-weight: bold;">Choisissez votre couleur préférée :</p>
             <div class="color-grid">
                 <label class="color-item"><input type="radio" name="color" value="Rose" checked onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#F52887;"></div>Rose</label>
 
-<label class="color-item"><input type="radio" name="color" value="Bleu ciel" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#5CB3FF;"></div>Bleu ciel</label>
+                <label class="color-item"><input type="radio" name="color" value="Bleu ciel" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#5CB3FF;"></div>Bleu ciel</label>
 
-<label class="color-item"><input type="radio" name="color" value="Blanc" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#FFFFFF; border:1px solid #ccc;"></div>Blanc</label>
+                <label class="color-item"><input type="radio" name="color" value="Blanc" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#FFFFFF; border:1px solid #ccc;"></div>Blanc</label>
 
-<label class="color-item"><input type="radio" name="color" value="Violet" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#9f6be8;"></div>Violet</label>
+                <label class="color-item"><input type="radio" name="color" value="Violet" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#9f6be8;"></div>Violet</label>
 
-<label class="color-item"><input type="radio" name="color" value="Noir" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#000000;"></div>Noir</label>
+                <label class="color-item"><input type="radio" name="color" value="Noir" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#000000;"></div>Noir</label>
 
-<label class="color-item"><input type="radio" name="color" value="Bleu royal" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#4169E1;"></div>Bleu royal</label>
+                <label class="color-item"><input type="radio" name="color" value="Bleu royal" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#4169E1;"></div>Bleu royal</label>
 
-<label class="color-item"><input type="radio" name="color" value="Orange" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#F76541;"></div>Orange</label>
+                <label class="color-item"><input type="radio" name="color" value="Orange" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#F76541;"></div>Orange</label>
 
-<label class="color-item"><input type="radio" name="color" value="Beige" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#DCC7A1;"></div>Beige</label>
+                <label class="color-item"><input type="radio" name="color" value="Beige" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#DCC7A1;"></div>Beige</label>
 
-<label class="color-item"><input type="radio" name="color" value="Vert d’eau" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#7FFFD4;"></div>Vert d’eau</label>
+                <label class="color-item"><input type="radio" name="color" value="Vert d’eau" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#7FFFD4;"></div>Vert d’eau</label>
 
-<label class="color-item"><input type="radio" name="color" value="Bordeaux" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#800020;"></div>Bordeaux</label>
+                <label class="color-item"><input type="radio" name="color" value="Bordeaux" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#800020;"></div>Bordeaux</label>
 
-<label class="color-item"><input type="radio" name="color" value="Blanc cassé" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#F8F4E3; border:1px solid #ccc;"></div>Blanc cassé</label>
+                <label class="color-item"><input type="radio" name="color" value="Blanc cassé" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#F8F4E3; border:1px solid #ccc;"></div>Blanc cassé</label>
 
-<label class="color-item"><input type="radio" name="color" value="Vert foncé" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#006400;"></div>Vert foncé</label>
+                <label class="color-item"><input type="radio" name="color" value="Vert foncé" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#006400;"></div>Vert foncé</label>
 
-<label class="color-item"><input type="radio" name="color" value="Rose vif" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#e6aac8;"></div>Rose vif</label>
+                <label class="color-item"><input type="radio" name="color" value="Rose vif" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#e6aac8;"></div>Rose vif</label>
  
- <label class="color-item"><input type="radio" name="color" value="Rouge" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#FF0000;"></div>Rouge</label>
+                <label class="color-item"><input type="radio" name="color" value="Rouge" onchange="updateFormColor(this.value)"><div class="color-swatch" style="background:#f20732;"></div>Rouge</label>
+            </div>
         </div>
 
         <div class="order-section">
@@ -298,10 +280,10 @@ Avec cette robe attirante, vous capterez tous les regards et resterez au sommet 
             <h3>📸 Détails du produit de près</h3>
             <p>Une qualité remarquable : choisissez ce qu’il y a de mieux pour vous.</p>
             <div class="image-grid">
-                <img src="img1.jpeg" alt="Détail 1">
-                <img src="img2.png" alt="Détail 2">
-                <img src="img3.jpeg" alt="Détail 3">
-                <img src="img4.jpeg" alt="Détail 4">
+                <img src="img1.webp" alt="Détail 1">
+                <img src="img2.webp" alt="Détail 2">
+                <img src="img3.webp" alt="Détail 3">
+                <img src="img4.webp" alt="Détail 4">
             </div>
         </div>
 
@@ -320,19 +302,16 @@ Avec cette robe attirante, vous capterez tous les regards et resterez au sommet 
     }
 
     function sendToWhatsapp(event) {
-        // Vérifie que tous les champs obligatoires sont remplis
         if (!event.target.checkValidity()) {
-            return; // Arrête l’envoi si un champ obligatoire est vide
+            return; 
         }
         
-        event.preventDefault(); // Empêche l’envoi classique du formulaire
+        event.preventDefault(); 
         
-        // Déclenche le pixel uniquement après validation du formulaire
         if (typeof fbq !== 'undefined') {
             fbq('track', 'Lead');
         }
         
-        // Récupération des informations
         const name = document.getElementById('name').value;
         const phone = document.getElementById('phone').value;
         const city = document.getElementById('city').value;
@@ -340,9 +319,9 @@ Avec cette robe attirante, vous capterez tous les regards et resterez au sommet 
         const color = document.getElementById('colorDisplay').value;
         const quantity = document.getElementById('quantity').value;
         const selectedSizeInput = document.querySelector('input[name="size"]:checked');
-const size = selectedSizeInput ? selectedSizeInput.value : ''; // Récupère la valeur (S, M, L...)
-        // Redirection vers WhatsApp
-window.location.href = `https://wa.me/212708781407?text=Commande :%0ANom : ${name}%0ATéléphone : ${phone}%0AVille : ${city}%0AAdresse : ${address}%0AQuantité : ${quantity}%0ATaille : ${size}%0ACouleur : ${color}`;    }
+        const size = selectedSizeInput ? selectedSizeInput.value : ''; 
+        
+        window.location.href = `https://wa.me/212708781407?text=Commande :%0ANom : ${name}%0ATéléphone : ${phone}%0AVille : ${city}%0AAdresse : ${address}%0AQuantité : ${quantity}%0ATaille : ${size}%0ACouleur : ${color}`;    }
     </script>
 </body>
 </html>
