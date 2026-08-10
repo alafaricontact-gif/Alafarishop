@@ -390,34 +390,6 @@
             font-weight: 700;
         }
     </style>
-
-
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1386678506858868');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1386678506858868&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-
-
-
-
-
-
-    
 </head>
 <body>
 
@@ -518,7 +490,7 @@ src="https://www.facebook.com/tr?id=1386678506858868&ev=PageView&noscript=1"
                     <span class="stars">★★★★★</span>
                 </div>
                 <p class="review-text">Nadi bzaf  Hzit bih sdari w talaja bo7di f dar bla ma n3ayet l 7ta wa7ed 😂 Sahl f l isti3mal w kaynfe3 bzaf Merci  </p>
-                <img src="img11.png" alt="صورة المنتج من الزبون" class="review-image-medium" style="width: 100%; max-width: 280px; height: auto; display: block; margin: 12px auto; border-radius: 8px;">
+                <img src="img7.jpg" alt="صورة المنتج من الزبون" class="review-image-medium" style="width: 100%; max-width: 280px; height: auto; display: block; margin: 12px auto; border-radius: 8px;">
             </div>
 
             <div class="review-card">
@@ -607,12 +579,14 @@ src="https://www.facebook.com/tr?id=1386678506858868&ev=PageView&noscript=1"
             const city = document.getElementById('city').value;
             const address = document.getElementById('address').value;
 
-            const message = `مرحباً، أريد تأكيد طلب أداة رافعة الأثقال المنزلية:%0A` +
-                            `- العرض: ${offer}%0A` +
-                            `- الاسم: ${name}%0A` +
-                            `- الهاتف: ${phone}%0A` +
-                            `- المدينة: ${city}%0A` +
-                            `- العنوان: ${address}`;
+            const rawMessage = `مرحباً، أريد تأكيد طلب أداة رافعة الأثقال المنزلية:\n` +
+                               `📌 العرض: ${offer}\n` +
+                               `👤 الاسم: ${name}\n` +
+                               `📱 الهاتف: ${phone}\n` +
+                               `🏙️ المدينة: ${city}\n` +
+                               `📍 العنوان: ${address}`;
+
+            const message = encodeURIComponent(rawMessage);
 
             const whatsappUrl = `https://wa.me/212708781407?text=${message}`;
             window.location.href = whatsappUrl;
