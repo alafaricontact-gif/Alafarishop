@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أداة رافعة الأثاث والأثقال المنزلية الذكية</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1018915787589571');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1018915787589571&ev=PageView&noscript=1"
+    /></noscript>
+    <style>
+        :root {
+            --bg-dark: #111111;
+            --card-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --text-gray: #aaaaaa;
+            --gold-accent: #d4a373;
+            --whatsapp-green: #25D366;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 700;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 17px;
+            padding-bottom: 90px;
+        }
+        
+        .top-bar {
+            background-color: var(--gold-accent);
+            color: #000;
+            padding: 10px 0;
+            font-size: 16px;
+            font-weight: 900;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        .top-bar span {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .header {
+            text-align: center;
+            padding: 10px;
+            background: var(--card-dark);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            border-bottom: 1px solid #333;
+        }
+        .logo {
+            max-width: 85px;
+            height: auto;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .main-title {
+            font-size: 26px;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--gold-accent);
+            font-weight: 900;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .image-grid img {
+            width: 100%;
+            max-width: 90%;
+            height: 250px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            object-fit: cover;
+        }
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .badge-item {
+            background: var(--card-dark);
+            padding: 10px 5px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--gold-accent);
+        }
+        .description-box {
+            background: var(--card-dark);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-right: 4px solid var(--gold-accent);
+        }
+        .description-box h3 {
+            margin-bottom: 10px;
+            color: var(--gold-accent);
+            font-weight: 900;
+        }
+        .description-box ul {
+            list-style-type: none;
+            padding-right: 0;
+        }
+        .description-box li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 20px;
+        }
+        .description-box li::before {
+            content: "✔";
+            position: absolute;
+            right: 0;
+            color: var(--gold-accent);
+        }
+        .price-tag {
+            text-align: center;
+            margin: 25px 0;
+            background: var(--card-dark);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px dashed var(--gold-accent);
+        }
+        .old-price {
+            font-size: 18px;
+            color: var(--text-gray);
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+        .new-price {
+            font-size: 30px;
+            font-weight: 900;
+            color: var(--gold-accent);
+        }
+        .order-section {
+            background: var(--card-dark);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            margin-bottom: 25px;
+        }
+        .order-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--gold-accent);
+            font-weight: 900;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 900;
+            color: var(--text-light);
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #444;
+            background: #222;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            direction: rtl;
+            text-align: right;
+            font-weight: 700;
+        }
+        .offers-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .offer-card {
+            background: #222;
+            border: 2px solid #444;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: 0.3s;
+        }
+        .offer-card input {
+            width: auto;
+        }
+        .offer-card.selected {
+            border-color: var(--gold-accent);
+            background: rgba(212, 163, 115, 0.1);
+        }
+        
+        .submit-btn {
+            background-color: var(--whatsapp-green);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 900;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            animation: vibrate-btn 1s infinite;
+        }
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+        @keyframes vibrate-btn {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .reviews-section {
+            background: var(--card-dark);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #333;
+        }
+        .reviews-section h3 {
+            color: var(--gold-accent);
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 900;
+        }
+        .review-card {
+            background: #222;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #333;
+        }
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .reviewer-name {
+            font-weight: 900;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+        .stars {
+            color: #ffc107;
+            font-size: 14px;
+        }
+        .review-text {
+            font-size: 14px;
+            color: #ddd;
+            margin-bottom: 8px;
+        }
+        .add-comment-section {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #444;
+        }
+        .add-comment-section h4 {
+            color: var(--gold-accent);
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 900;
+        }
+        .comment-btn {
+            background-color: var(--gold-accent);
+            color: #000;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: 900;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 8px;
+        }
+        .comment-btn:hover {
+            opacity: 0.9;
+        }
+        .faq-section {
+            background: var(--card-dark);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid #333;
+        }
+        .faq-section h3 {
+            color: var(--gold-accent);
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 900;
+        }
+        .faq-item {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .faq-question {
+            font-weight: 900;
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--card-dark);
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+            z-index: 100;
+            border-top: 1px solid #333;
+        }
+        .sticky-btn {
+            background-color: var(--whatsapp-green);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 900;
+            font-size: 18px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            animation: vibrate-sticky 0.8s infinite;
+        }
+        @keyframes vibrate-sticky {
+            0% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.06) rotate(-2deg); }
+            50% { transform: scale(1.06) rotate(2deg); }
+            75% { transform: scale(1.06) rotate(-2deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0a0a0a;
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-top: 30px;
+            border-top: 1px solid #222;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span>⚡ التوصيل بالمجان لجميع المدن المغربية والدفع عند الاستلام! ⚡</span>
+    </div>
+
+    <div class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+    </div>
+
+    <div class="container">
+        <h1 class="main-title">أداة رافعة الأثاث والأثقال المنزلية الذكية</h1>
+
+        <div class="image-grid">
+            <img src="img2.webp" alt="رافعة الأثقال 1">
+            <img src="img1.webp" alt="رافعة الأثقال 2">
+            <img src="img3.webp" alt="رافعة الأثقال 3">
+            <img src="img4.webp" alt="رافعة الأثقال 4">
+            <img src="img5.webp" alt="رافعة الأثقال 5">
+            <img src="img6.webp" alt="رافعة الأثقال 6">
+        </div>
+
+        <div class="trust-badges">
+            <div class="badge-item">🚚 توصيل مجاني</div>
+            <div class="badge-item">💰 الدفع عند الاستلام</div>
+            <div class="badge-item">🛡️ متين وعالي الجودة</div>
+        </div>
+
+        <div class="description-box" style="text-align: center;">
+            <h3>مميزات المنتج:</h3>
+            <ul style="list-style-position: inside; padding: 0;">
+                <li>تساعدك في تحريك الثلاجة، السداري، الغسالة، والماريو بسهولة تامة.</li>
+                <li>تمنع آلام الظهر وإجهاد العضلات أثناء تنظيف البيت أو الترتيب.</li>
+                <li>تتكون من مكبس رفيع قوي + 4 قواعد متحركة مزودة بعجلات متينة.</li>
+                <li>تحمي الأرضيات والزليج من الخدوش أو التلف.</li>
+            </ul>
+        </div>
+
+        <div class="price-tag">
+            <span class="old-price">300 درهم</span>
+            <span class="new-price">199 درهم فقط!</span>
+        </div>
+
+        <div class="order-section" id="order-section">
+            <h2>اطلب الآن واستفد من التخفيض</h2>
+            <form id="orderForm" onsubmit="sendToWhatsapp(event)">
+                <div class="form-group">
+                    <label>اختر العرض المناسب:</label>
+                    <div class="offers-container">
+                        <label class="offer-card selected" onclick="updatePrice(this)">
+                            <div>
+                                <input type="radio" name="offer" value="أداة واحدة - 199 درهم" checked>
+                                <strong>عرض قطعة واحدة</strong>
+                            </div>
+                            <span>199 DH</span>
+                        </label>
+                        <label class="offer-card" onclick="updatePrice(this)">
+                            <div>
+                                <input type="radio" name="offer" value="عرض أداتين (Pack 2) - 359 درهم">
+                                <strong>عرض أداتين (Pack 2) 🔥</strong>
+                            </div>
+                            <span>359 DH</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">الاسم الكامل:</label>
+                    <input type="text" id="name" required placeholder="أدخل اسمك الكامل">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" required placeholder="أدخل رقم هاتفك">
+                </div>
+
+                <div class="form-group">
+                    <label for="city">المدينة:</label>
+                    <input type="text" id="city" required placeholder="أدخل مدينتك">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">العنوان:</label>
+                    <input type="text" id="address" required placeholder="أدخل عنوانك">
+                </div>
+
+                <button type="submit" class="submit-btn">تأكيد الطلب عبر الواتساب 🛒</button>
+            </form>
+        </div>
+
+        <div class="reviews-section">
+            <h3>آراء ومشاركات زبنائنا الكرام</h3>
+            
+            <div class="review-card" style="text-align: center; padding: 10px;">
+                <div class="review-header" style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+                    <span class="reviewer-name">Karim M.</span>
+                    <span class="stars">★★★★★</span>
+                </div>
+                <p class="review-text">Nadi bzaf  Hzit bih sdari w talaja bo7di f dar bla ma n3ayet l 7ta wa7ed 😂 Sahl f l isti3mal w kaynfe3 bzaf Merci  </p>
+                <img src="img7.jpg" alt="صورة المنتج من الزبون" class="review-image-medium" style="width: 100%; max-width: 280px; height: auto; display: block; margin: 12px auto; border-radius: 8px;">
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="reviewer-name">Hassan B.</span>
+                    <span class="stars">★★★★★</span>
+                </div>
+                <p class="review-text">وصلاتني اليوم صراحة مزيانة وخدامة كيف ما توقعت والتوصيل كان سريع، شكراً ليكم 🙏  </p>
+            </div>
+
+            <div class="add-comment-section">
+                <h4>أضف تعليقك أو تقييمك للمنتج:</h4>
+                <form id="commentForm" onsubmit="submitComment(event)">
+                    <div class="form-group" style="margin-bottom: 10px;">
+                        <input type="text" id="commentName" required placeholder="اسمك الكريم" style="padding: 8px; font-size: 14px;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 10px;">
+                        <textarea id="commentText" required placeholder="اكتب رأيك بكل صراحة..." rows="2" style="padding: 8px; font-size: 14px; width: 100%; background: #222; color: white; border: 1px solid #444; border-radius: 8px;"></textarea>
+                    </div>
+                    <button type="submit" class="comment-btn">إرسال التعليق للمراجعة</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h3>أسئلة متكررة</h3>
+            <div class="faq-item">
+                <div class="faq-question">شحال مدة التوصيل؟</div>
+                <div class="faq-answer">التوصيل سريع ويأخذ ما بين 24 إلى 48 ساعة لجميع المدن المغربية.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">كيفاش كنخلص الثمن؟</div>
+                <div class="faq-answer">الدفع كيكون حتى كيوصلك المنتج لعندك عاد كتخلص الموصل (الدفع عند الاستلام).</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sticky-footer">
+        <a href="#order-section" class="sticky-btn">اطلب الآن بسرعة 🚀</a>
+    </div>
+
+    <footer>
+        <p>البريد الإلكتروني: Alafaricontact@gmail.com</p>
+        <p>العنوان: Adresse : Rabat-Maroc</p>
+        <p>الهاتف: Téléphone : +212 7 08 78 14 07</p>
+        <p>جميع الحقوق محفوظة &copy; 2026</p>
+    </footer>
+
+    <script>
+        function updatePrice(card) {
+            document.querySelectorAll('.offer-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            const radio = card.querySelector('input[type="radio"]');
+            radio.checked = true;
+        }
+
+        function submitComment(event) {
+            event.preventDefault();
+            alert('شكراً لك! تم إرسال تقييمك بنجاح، سيتم نشره فور مراجعته من إدارة الموقع.');
+            document.getElementById('commentForm').reset();
+        }
+
+        function sendToWhatsapp(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('orderForm');
+            if (!form.checkValidity()) {
+                alert('المرجو تعبئة جميع الخانات المطلوبة!');
+                return;
+            }
+
+            const phone = document.getElementById('phone').value.trim();
+            const phoneRegex = /^(06|07)[0-9]{8}$/;
+            if (!phoneRegex.test(phone)) {
+                alert('المرجو إدخال رقم هاتف مغربي صحيح يبدأ بـ 06 أو 07 ويتكون من 10 أرقام.');
+                document.getElementById('phone').focus();
+                return;
+            }
+
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
+
+            const offer = document.querySelector('input[name="offer"]:checked').value;
+            const name = document.getElementById('name').value;
+            const city = document.getElementById('city').value;
+            const address = document.getElementById('address').value;
+
+            const message = `مرحباً، أريد تأكيد طلب أداة رافعة الأثقال المنزلية:%0A` +
+                            `- العرض: ${offer}%0A` +
+                            `- الاسم: ${name}%0A` +
+                            `- الهاتف: ${phone}%0A` +
+                            `- المدينة: ${city}%0A` +
+                            `- العنوان: ${address}`;
+
+            const whatsappUrl = `https://wa.me/212708781407?text=${message}`;
+            window.location.href = whatsappUrl;
+        }
+    </script>
+</body>
+</html>
