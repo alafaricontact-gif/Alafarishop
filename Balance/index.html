@@ -98,13 +98,14 @@
         }
         .image-grid img {
             width: 100%;
-            max-width: 90%;
-            height: 250px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            background-color: #1a1a1a;
             margin: 0 auto;
             display: block;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            object-fit: cover;
         }
         .trust-badges {
             display: grid;
