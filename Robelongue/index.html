@@ -45,6 +45,8 @@
         .order-section { background: var(--card-dark); padding: 25px; border-radius: 12px; border: 1px solid #222; }
         .label-style { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-light); }
         .form-control { width: 100%; padding: 12px 15px; border: 1px solid #333; border-radius: 8px; font-size: 16px; background-color: #222; color: white; margin-bottom: 15px; }
+        .extra-colors { display: none; padding: 15px; margin-bottom: 15px; border: 1px dashed var(--gold-accent); border-radius: 8px; }
+        .extra-colors.active { display: block; }
         
         /* الزر العائم */
         .sticky-btn-container { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.9); padding: 15px; text-align: center; z-index: 999; border-top: 1px solid #333; }
@@ -265,9 +267,9 @@ p{
         <div class="order-section">
             <form onsubmit="sendToWhatsapp(event)">
                 <label class="label-style">الكمية والعرض:</label>
-                <select id="quantity" class="form-control">
+                <select id="quantity" class="form-control" onchange="updateOfferColors()">
                     <option value="قطعة واحدة - 169 درهم">قطعة واحدة - 169 درهم</option>
-                    <option value="عرض قطعتين - 299 درهم">عرض قطعتين - 299 درهم 🔥</option>
+                    <option value="عرض قطعتين + قطعة مجانية - 3 قطع بـ 299 درهم">اشتري قطعتين بـ 299 درهم واحصلي على الثالثة مجاناً 🔥</option>
                 </select>
 
                 <label class="label-style">الاسم الكامل:</label>
@@ -284,6 +286,22 @@ p{
                 
                 <label class="label-style">اللون:</label>
                 <input type="text" id="colorDisplay" class="form-control" value="وردي" readonly style="border: 1px solid var(--gold-accent);">
+
+                <div id="extraColors" class="extra-colors">
+                    <label class="label-style">لون القطعة الثانية:</label>
+                    <select id="color2" class="form-control">
+                        <option>وردي</option><option>أزرق سماوي</option><option>أبيض</option><option>بنفسجي</option>
+                        <option>أسود</option><option>أزرق ملكي</option><option>برتقالي</option><option>أخضر مائي</option>
+                        <option>خمري</option><option>أوف وايت</option><option>أصفر</option><option>أحمر</option>
+                    </select>
+
+                    <label class="label-style">لون القطعة الثالثة المجانية:</label>
+                    <select id="color3" class="form-control">
+                        <option>وردي</option><option>أزرق سماوي</option><option>أبيض</option><option>بنفسجي</option>
+                        <option>أسود</option><option>أزرق ملكي</option><option>برتقالي</option><option>أخضر مائي</option>
+                        <option>خمري</option><option>أوف وايت</option><option>أصفر</option><option>أحمر</option>
+                    </select>
+                </div>
                 
                 <button type="submit" style="display:none;"></button>
             </form>
@@ -342,6 +360,13 @@ p{
         document.getElementById('colorDisplay').value = color; 
     }
 
+    function updateOfferColors() {
+        const quantity = document.getElementById('quantity');
+        const extraColors = document.getElementById('extraColors');
+        const isThreePieceOffer = quantity.selectedIndex === 1;
+        extraColors.classList.toggle('active', isThreePieceOffer);
+    }
+
     function sendToWhatsapp(event) {
         // 1. هاد السطر كيتأكد بلي الـ Form صالحة (كلشي معمر) قبل ما يدير أي حاجة
         if (!event.target.checkValidity()) {
@@ -362,10 +387,16 @@ p{
         const address = document.getElementById('address').value;
         const color = document.getElementById('colorDisplay').value;
         const quantity = document.getElementById('quantity').value;
+        const isThreePieceOffer = document.getElementById('quantity').selectedIndex === 1;
+        const color2 = document.getElementById('color2').value;
+        const color3 = document.getElementById('color3').value;
         const selectedSizeInput = document.querySelector('input[name="size"]:checked');
 const size = selectedSizeInput ? selectedSizeInput.value : ''; // Récupère la valeur (S, M, L...)
+        const colorsMessage = isThreePieceOffer
+            ? `لون القطعة الأولى: ${color}%0Aلون القطعة الثانية: ${color2}%0Aلون القطعة الثالثة المجانية: ${color3}`
+            : `اللون: ${color}`;
         // التوجيه للواتساب
-window.location.href = `https://wa.me/212708781407?text=طلب:%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالمدينة: ${city}%0Aالعنوان: ${address}%0Aالكمية: ${quantity}%0Aالمقاس: ${size}%0Aاللون: ${color}`;    }
+window.location.href = `https://wa.me/212708781407?text=طلب:%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالمدينة: ${city}%0Aالعنوان: ${address}%0Aالكمية والعرض: ${quantity}%0Aالمقاس: ${size}%0A${colorsMessage}`;    }
     </script>
 </body>
 </html>
