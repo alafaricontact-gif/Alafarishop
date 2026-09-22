@@ -359,12 +359,14 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1557856569320485');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1557856569320485&ev=PageView&noscript=1"
-/></noscript>
 <!-- End Meta Pixel Code -->
 </head>
 <body>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=1557856569320485&ev=PageView&noscript=1"
+             alt="">
+    </noscript>
     <div class="top-bar">
         🔥 الكمية محدودة جداً! التوصيل بالمجان إلى جميع المدن، والدفع عند الاستلام 🔥
     </div>
@@ -440,11 +442,9 @@ src="https://www.facebook.com/tr?id=1557856569320485&ev=PageView&noscript=1"
                 </div>
                 <div class="form-group">
                     <label for="quantity">الكمية المطلوبة (اختر العرض المناسب):</label>
-                    <select id="quantity" class="form-control">
- <option value="قطعة واحدة (239 درهم)">قطعة واحدة (239 درهم)</option> 
-                        <option value="قطعتين (419 درهم)">قطعتين (419 درهم فقط - العرض الأكثر طلباً 🔥)</option>
-                        
-                       
+                    <select id="quantity" class="form-control" required>
+                        <option value="1" data-price="239">قطعة واحدة (239 درهم)</option>
+                        <option value="2" data-price="419">قطعتان (419 درهم فقط - العرض الأكثر طلباً 🔥)</option>
                     </select>
                 </div>
                 <button type="submit" class="submit-btn">
@@ -512,30 +512,69 @@ src="https://www.facebook.com/tr?id=1557856569320485&ev=PageView&noscript=1"
             event.target.reset();
         }
 
+        let orderIsBeingSent = false;
+
         function sendToWhatsapp(event) {
             event.preventDefault();
-            
-            // إضافة الـ Event الخاص بفيسبوك
-            if (typeof fbq === 'function') {
-                fbq('track', 'Purchase', {value: 0.00, currency: 'MAD'});
-           
+
+            // منع إرسال الطلب وتسجيل الحدث مرتين عند النقر المتكرر.
+            if (orderIsBeingSent) {
+                return;
             }
+            orderIsBeingSent = true;
 
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const address = document.getElementById('address').value;
-            const quantity = document.getElementById('quantity').value;
+            const quantitySelect = document.getElementById('quantity');
+            const selectedOffer = quantitySelect.options[quantitySelect.selectedIndex];
+            const quantity = Number(selectedOffer.value);
+            const orderValue = Number(selectedOffer.dataset.price);
+            const offerText = selectedOffer.textContent.trim();
 
-            const message = `مرحباً، أريد تأكيد طلب السوار النحاسي المغناطيسي (Alafari Cuivre):%0A%0A` +
-                            ` الاسم الكامل: ${name}%0A` +
-                            ` رقم الهاتف: ${phone}%0A` +
-                            `العنوان والمدينة: ${address}%0A` +
-                            `العرض والكمية: ${quantity}`;
+            const submitButton = event.target.querySelector('.submit-btn');
+            submitButton.disabled = true;
+            submitButton.textContent = 'جاري تأكيد الطلب...';
+
+            // تسجيل عملية الشراء في Meta Pixel بالقيمة الحقيقية للطلب.
+            if (typeof window.fbq === 'function') {
+                window.fbq('track', 'Purchase', {
+                    value: orderValue,
+                    currency: 'MAD',
+                    content_name: 'السوار النحاسي المغناطيسي',
+                    content_type: 'product',
+                    content_ids: ['alafari-copper-bracelet'],
+                    contents: [
+                        {
+                            id: 'alafari-copper-bracelet',
+                            quantity: quantity,
+                            item_price: orderValue / quantity
+                        }
+                    ],
+                    num_items: quantity
+                });
+
+                console.log('Meta Purchase event sent:', orderValue, 'MAD');
+            } else {
+                console.error('Meta Pixel (fbq) is not loaded.');
+            }
+
+            const message = encodeURIComponent(
+                `مرحباً، أريد تأكيد طلب السوار النحاسي المغناطيسي (Alafari Cuivre):\n\n` +
+                `الاسم الكامل: ${name}\n` +
+                `رقم الهاتف: ${phone}\n` +
+                `العنوان والمدينة: ${address}\n` +
+                `العرض والكمية: ${offerText}\n` +
+                `المبلغ الإجمالي: ${orderValue} درهم`
+            );
 
             const whatsappNumber = "212612414722";
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
-            
-            window.location.href = whatsappUrl;
+
+            // نترك مهلة قصيرة للمتصفح حتى يرسل حدث Meta قبل فتح WhatsApp.
+            window.setTimeout(function () {
+                window.location.href = whatsappUrl;
+            }, 1000);
         }
     </script>
 </body>
