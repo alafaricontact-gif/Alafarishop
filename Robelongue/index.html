@@ -106,7 +106,7 @@ src="https://www.facebook.com/tr?id=2715858068835095&ev=PageView&noscript=1"
         
         <div class="price-tag">
     <span class="old-price">200 درهم</span>
-    <span class="new-price">159 درهم فقط</span>
+    <span class="new-price">129 درهم فقط</span>
 </div>
 
 <style>
@@ -152,9 +152,9 @@ p{
 بهاد الفستان الجذاب، غادي تخطفي الأنظار وتكوني ديما في قمة الجاذبية لزوجك.
 </p>
 
-<p>✅ متوفر في ألوان متنوعة: تشكيلة ألوان صيفية مبهجة كتناسب جميع الأذواق.</p>
+<p>✅ متوفر في ألوان متنوعة: تشكيلة ألوان  مبهجة كتناسب جميع الأذواق.</p>
 
-<p>✅ خفيف، منعش، ومثالي للبيت وتا للبحر.</p>
+<p>✅ خفيف، منعش، ومثالي للبيت </p>
 
 <p>✅ إطلالة لا تُقاوم: ظهر مفتوح كيبرز جمالك وأناقتك.</p>
 
@@ -268,8 +268,8 @@ p{
             <form onsubmit="sendToWhatsapp(event)">
                 <label class="label-style">الكمية والعرض:</label>
                 <select id="quantity" class="form-control" onchange="updateOfferColors()">
-                    <option value="قطعة واحدة - 159 درهم">قطعة واحدة - 159 درهم</option>
-                    <option value="عرض قطعتين + قطعة مجانية - 3 قطع بـ 299 درهم">اشتري قطعتين بـ 299 درهم واحصلي على الثالثة مجاناً 🔥</option>
+                    <option value="قطعة واحدة - 129 درهم">قطعة واحدة - 129 درهم</option>
+                 <option value="عرض قطعتين - 2 قطع بـ 229 درهم">اشتري قطعتين بـ 229 درهم فقط 🔥</option>
                 </select>
 
                 <label class="label-style">الاسم الكامل:</label>
@@ -290,13 +290,6 @@ p{
                 <div id="extraColors" class="extra-colors">
                     <label class="label-style">لون القطعة الثانية:</label>
                     <select id="color2" class="form-control">
-                        <option>وردي</option><option>أزرق سماوي</option><option>أبيض</option><option>بنفسجي</option>
-                        <option>أسود</option><option>أزرق ملكي</option><option>برتقالي</option><option>أخضر مائي</option>
-                        <option>خمري</option><option>أوف وايت</option><option>أصفر</option><option>أحمر</option>
-                    </select>
-
-                    <label class="label-style">لون القطعة الثالثة المجانية:</label>
-                    <select id="color3" class="form-control">
                         <option>وردي</option><option>أزرق سماوي</option><option>أبيض</option><option>بنفسجي</option>
                         <option>أسود</option><option>أزرق ملكي</option><option>برتقالي</option><option>أخضر مائي</option>
                         <option>خمري</option><option>أوف وايت</option><option>أصفر</option><option>أحمر</option>
@@ -389,11 +382,10 @@ p{
         const quantity = document.getElementById('quantity').value;
         const isThreePieceOffer = document.getElementById('quantity').selectedIndex === 1;
         const color2 = document.getElementById('color2').value;
-        const color3 = document.getElementById('color3').value;
         const selectedSizeInput = document.querySelector('input[name="size"]:checked');
 const size = selectedSizeInput ? selectedSizeInput.value : ''; // Récupère la valeur (S, M, L...)
         const colorsMessage = isThreePieceOffer
-            ? `لون القطعة الأولى: ${color}%0Aلون القطعة الثانية: ${color2}%0Aلون القطعة الثالثة المجانية: ${color3}`
+            ? `لون القطعة الأولى: ${color}%0Aلون القطعة الثانية: ${color2}`
             : `اللون: ${color}`;
         // التوجيه للواتساب
 window.location.href = `https://wa.me/212708781407?text=طلب:%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالمدينة: ${city}%0Aالعنوان: ${address}%0Aالكمية والعرض: ${quantity}%0Aالمقاس: ${size}%0A${colorsMessage}`;    }
