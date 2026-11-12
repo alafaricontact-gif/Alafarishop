@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>طقم Fluffy النسائي من 3 قطع | AlaFari Shop</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg-dark: #111111;
+    --card-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --text-gray: #aaaaaa;
+    --gold-accent: #d4a373;
+    --whatsapp-green: #25D366;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 17px;
+    padding-bottom: 90px;
+}
+
+.top-bar {
+    background: var(--gold-accent);
+    color: black;
+    padding: 10px;
+    font-weight: 900;
+    text-align: center;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    padding: 10px;
+    background: var(--card-dark);
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    max-width: 85px;
+    height: auto;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.main-title {
+    font-size: 25px;
+    text-align: center;
+    margin: 20px 0 10px;
+    color: var(--gold-accent);
+    font-weight: 900;
+}
+
+.subtitle {
+    text-align: center;
+    color: #e4d6cc;
+    margin-bottom: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #292929;
+}
+
+.trust-badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.badge-item {
+    background: var(--card-dark);
+    padding: 12px 5px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--gold-accent);
+}
+
+.description-box {
+    background: var(--card-dark);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-right: 4px solid var(--gold-accent);
+}
+
+.description-box h3 {
+    color: var(--gold-accent);
+    margin-bottom: 12px;
+}
+
+.description-box ul {
+    list-style: none;
+}
+
+.description-box li {
+    margin-bottom: 10px;
+    padding-right: 23px;
+    position: relative;
+    font-size: 15px;
+}
+
+.description-box li::before {
+    content: "✔";
+    position: absolute;
+    right: 0;
+    color: var(--gold-accent);
+}
+
+.price-tag {
+    text-align: center;
+    background: var(--card-dark);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px dashed var(--gold-accent);
+    margin-bottom: 25px;
+}
+
+.new-price {
+    display: block;
+    color: var(--gold-accent);
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.pack-highlight {
+    font-size: 15px;
+    color: #eee;
+}
+
+.order-section {
+    background: var(--card-dark);
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    margin-bottom: 25px;
+    scroll-margin-top: 15px;
+}
+
+.order-section h2 {
+    text-align: center;
+    color: var(--gold-accent);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group > label,
+.field-label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.form-group input:not([type="radio"]),
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    direction: rtl;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid var(--gold-accent);
+}
+
+.offers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.offer-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    border: 2px solid #444;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.offer-card.selected {
+    border-color: var(--gold-accent);
+    background: rgba(212,163,115,0.12);
+}
+
+.offer-card input {
+    margin-left: 8px;
+    accent-color: var(--gold-accent);
+}
+
+.offer-price {
+    color: var(--gold-accent);
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.save-note {
+    color: var(--gold-accent);
+    text-align: center;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.set-card {
+    background: #202020;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    min-width: 0;
+}
+
+.set-card legend {
+    color: var(--gold-accent);
+    font-weight: 900;
+    padding: 0 8px;
+}
+
+.second-set {
+    display: none;
+}
+
+.second-set.visible {
+    display: block;
+}
+
+.pants-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.pants-options label {
+    cursor: pointer;
+}
+
+.pants-options input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.pants-options span {
+    display: block;
+    text-align: center;
+    padding: 11px 5px;
+    border-radius: 8px;
+    border: 2px solid #444;
+    background: #292929;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.pants-options input:checked + span {
+    border-color: var(--gold-accent);
+    background: rgba(212,163,115,0.2);
+    color: var(--gold-accent);
+}
+
+.pants-options input:focus-visible + span {
+    outline: 2px solid white;
+}
+
+.size-selector {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.size-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.size-radio {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.size-btn {
+    display: inline-block;
+    min-width: 45px;
+    padding: 8px;
+    background: #292929;
+    color: white;
+    border: 2px solid #444;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.size-radio:checked + .size-btn {
+    background: var(--gold-accent);
+    color: black;
+    border-color: var(--gold-accent);
+}
+
+.size-radio:focus-visible + .size-btn {
+    outline: 2px solid white;
+}
+
+.order-total {
+    border-top: 1px solid #444;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+}
+
+.order-total strong {
+    color: var(--gold-accent);
+    font-size: 24px;
+}
+
+.submit-btn {
+    background: var(--whatsapp-green);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 900;
+    border-radius: 8px;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {transform: scale(1);}
+    50% {transform: scale(1.025);}
+}
+
+.reviews-section,
+.faq-section {
+    background: var(--card-dark);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #333;
+}
+
+.reviews-section h3,
+.faq-section h3 {
+    color: var(--gold-accent);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.review-card {
+    background: #222;
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #333;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.reviewer-name {
+    font-weight: 900;
+}
+
+.stars {
+    color: #ffc107;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.review-note {
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.faq-item {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 12px;
+}
+
+.faq-question {
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.faq-answer {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--card-dark);
+    text-align: center;
+    padding: 10px;
+    z-index: 100;
+    border-top: 1px solid #333;
+}
+
+.sticky-btn {
+    display: inline-block;
+    background: var(--whatsapp-green);
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 900;
+    animation: pulse 1.5s infinite;
+}
+
+footer {
+    background: #0a0a0a;
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+@media(max-width:420px) {
+    .container {padding: 14px;}
+    .image-grid img {height: 245px;}
+    .main-title {font-size: 22px;}
+    .badge-item {font-size: 11px;}
+    .order-section {padding: 16px;}
+}
+
+@media(prefers-reduced-motion:reduce) {
+    * {
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(
+window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init','1403845545026782');
+fbq('track','PageView');
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+alt=""
+src="https://www.facebook.com/tr?id=1403845545026782&amp;ev=PageView&amp;noscript=1">
+</noscript>
+<!-- End Meta Pixel Code -->
+
+</head>
+
+<body>
+
+<div class="top-bar">
+    ⚡ توصيل مجاني وسريع لجميع مدن المغرب | الدفع عند الاستلام بعد المعاينة ⚡
+</div>
+
+<header class="header">
+    <img src="logo.png" alt="AlaFari Shop" class="logo">
+</header>
+
+<main class="container">
+
+<h1 class="main-title">
+    طقم Fluffy النسائي من 3 قطع 🧸✨
+</h1>
+
+<p class="subtitle">
+    بينوار فلافي ناعم + صديرية تريكو قصيرة + سروال طويل أو شورت ❤️
+</p>
+
+<!-- صور المنتوج -->
+<div class="image-grid">
+    <img src="img1.jpg" alt="طقم Fluffy الصورة الأولى">
+    <img src="img2.jpg" alt="طقم Fluffy الصورة الثانية" loading="lazy">
+    <img src="img3.jpg" alt="طقم Fluffy الصورة الثالثة" loading="lazy">
+    <img src="img4.jpg" alt="طقم Fluffy الصورة الرابعة" loading="lazy">
+</div>
+
+<div class="trust-badges">
+    <div class="badge-item">🚚 توصيل مجاني</div>
+    <div class="badge-item">🤝 الدفع بعد المعاينة</div>
+    <div class="badge-item">🧸 Fleece ناعم</div>
+</div>
+
+<section class="description-box">
+
+<h3>مميزات طقم Fluffy الفاخر:</h3>
+
+<ul>
+    <li>
+        <strong>طقم متكامل من 3 قطع:</strong>
+        بينوار فلافي ناعم، صديرية تريكو قصيرة وناعمة،
+        وسروال طويل أو شورت حسب اختيارك.
+    </li>
+
+    <li>
+        <strong>ثوب Fleece:</strong>
+        ثوب منفوش وناعم ومريح على البشرة،
+        مناسب للأجواء الباردة.
+    </li>
+
+    <li>
+        <strong>اختيار نوع السروال:</strong>
+        تقدري تختاري سروال طويل (Long)
+        أو شورت (Short).
+    </li>
+
+    <li>
+        <strong>6 ألوان:</strong>
+        البنفسجي، الوردي، البيج، الأزرق،
+        الرمادي والمورتيلا.
+    </li>
+
+    <li>
+        <strong>لون القطعة السفلية:</strong>
+        عندك الاختيار بين الأبيض
+        أو نفس لون البينوار، سواء سروال أو شورت.
+    </li>
+</ul>
+
+</section>
+
+<div class="price-tag">
+    <span>عرض الطقم الواحد (3 قطع)</span>
+    <span class="new-price">239 درهم فقط!</span>
+
+    <p class="pack-highlight">
+        🔥 جوج أطقم بـ419 درهم فقط — توفري 59 درهم
+    </p>
+</div>
+
+<section class="order-section" id="order-section">
+
+<h2>استفيدي من العرض واطلبي الآن 🛒</h2>
+
+<form id="orderForm">
+
+<!-- اختيار العرض -->
+<div class="form-group">
+
+<span class="field-label">اختاري العرض المناسب:</span>
+
+<div class="offers-container">
+
+<label class="offer-card selected">
+    <span>
+        <input type="radio"
+               name="offer"
+               value="one"
+               checked>
+        <strong>طقم واحد (3 قطع)</strong>
+    </span>
+    <span class="offer-price">239 DH</span>
+</label>
+
+<label class="offer-card">
+    <span>
+        <input type="radio"
+               name="offer"
+               value="two">
+        <strong>جوج أطقم (6 قطع) 🔥</strong>
+    </span>
+    <span class="offer-price">419 DH</span>
+</label>
+
+</div>
+
+<p class="save-note" id="savings-note"></p>
+
+</div>
+
+<!-- الطقم الأول -->
+<fieldset class="set-card">
+
+<legend>🧸 الطقم الأول</legend>
+
+<!-- نوع السروال أولا -->
+<div class="form-group">
+
+<span class="field-label">
+    1. اختاري نوع السروال:
+</span>
+
+<div class="pants-options">
+
+<label>
+    <input type="radio"
+           name="pants1"
+           value="سروال طويل (Long)"
+           checked>
+    <span>👖 سروال طويل</span>
+</label>
+
+<label>
+    <input type="radio"
+           name="pants1"
+           value="شورت (Short)">
+    <span>🩳 شورت Short</span>
+</label>
+
+</div>
+</div>
+
+<!-- اللون -->
+<div class="form-group">
+
+<label for="color1">
+    2. اختاري لون البينوار والصديرية:
+</label>
+
+<select id="color1" required>
+    <option value="بنفسجي">بنفسجي (Violet)</option>
+    <option value="وردي">وردي (Rose)</option>
+    <option value="بيج">بيج (Beige)</option>
+    <option value="أزرق">أزرق (Bleu)</option>
+    <option value="رمادي">رمادي (Gris)</option>
+    <option value="مورتيلا">مورتيلا (Mortadella)</option>
+</select>
+
+</div>
+
+<!-- لون القطعة السفلية -->
+<div class="form-group">
+
+<span class="field-label">
+    3. اختاري لون السروال أو الشورت:
+</span>
+
+<div class="pants-options">
+
+<label>
+    <input type="radio"
+           name="bottomColor1"
+           value="white"
+           checked>
+    <span>🤍 أبيض</span>
+</label>
+
+<label>
+    <input type="radio"
+           name="bottomColor1"
+           value="match">
+    <span id="matchedColorLabel1">
+        🎨 نفس لون البينوار
+    </span>
+</label>
+
+</div>
+</div>
+
+<!-- المقاس -->
+<div class="size-selector">
+
+<span class="field-label">
+    4. اختاري المقاس:
+</span>
+
+<div class="size-options">
+
+<label>
+    <input class="size-radio"
+           type="radio"
+           name="size1"
+           value="S">
+    <span class="size-btn">S</span>
+</label>
+
+<label>
+    <input class="size-radio"
+           type="radio"
+           name="size1"
+           value="M">
+    <span class="size-btn">M</span>
+</label>
+
+<label>
+    <input class="size-radio"
+           type="radio"
+           name="size1"
+           value="L"
+           checked>
+    <span class="size-btn">L</span>
+</label>
+
+<label>
+    <input class="size-radio"
+           type="radio"
+           name="size1"
+           value="XL">
+    <span class="size-btn">XL</span>
+</label>
+
+<label>
+    <input class="size-radio"
+           type="radio"
+           name="size1"
+           value="XXL">
+    <span class="size-btn">XXL</span>
+</label>
+
+</div>
+</div>
+
+</fieldset>
+
+<!-- الطقم الثاني -->
+<fieldset class="set-card second-set"
+          id="secondSet"
+          disabled>
+
+<legend>🧸 الطقم الثاني</legend>
+
+<!-- نوع السروال -->
+<div class="form-group">
+
+<span class="field-label">
+    1. اختاري نوع السروال:
+</span>
+
+<div class="pants-options">
+
+<label>
+    <input type="radio"
+           name="pants2"
+           value="سروال طويل (Long)"
+           checked>
+    <span>👖 سروال طويل</span>
+</label>
+
+<label>
+    <input type="radio"
+           name="pants2"
+           value="شورت (Short)">
+    <span>🩳 شورت Short</span>
+</label>
+
+</div>
+</div>
+
+<!-- اللون -->
+<div class="form-group">
+
+<label for="color2">
+    2. اختاري لون البينوار والصديرية:
+</label>
+
+<select id="color2" required>
+    <option value="بنفسجي">بنفسجي (Violet)</option>
+    <option value="وردي">وردي (Rose)</option>
+    <option value="بيج">بيج (Beige)</option>
+    <option value="أزرق">أزرق (Bleu)</option>
+    <option value="رمادي">رمادي (Gris)</option>
+    <option value="مورتيلا">مورتيلا (Mortadella)</option>
+</select>
+
+</div>
+
+<!-- لون القطعة السفلية -->
+<div class="form-group">
+
+<span class="field-label">
+    3. اختاري لون السروال أو الشورت:
+</span>
+
+<div class="pants-options">
+
+<label>
+    <input type="radio"
+           name="bottomColor2"
+           value="white"
+           checked>
+    <span>🤍 أبيض</span>
+</label>
+
+<label>
+    <input type="radio"
+           name="bottomColor2"
+           value="match">
+    <span id="matchedColorLabel2">
+        🎨 نفس لون البينوار
+    </span>
+</label>
+
+</div>
+</div>
+
+<!-- المقاس -->
+<div class="size-selector">
+
+<span class="field-label">
+    4. اختاري المقاس:
+</span>
+
+<div class="size-options">
+
+<label>
+    <input class="size-radio"
+           type="radio"
+           name="size2"
+           value="S">
+    <span class="size-btn">S</span>
+</label>
+
+<label>
+    <input class="size-radio"
+           type="radio"
+           name="size2"
+           value="M">
+    <span class="size-btn">M</span>
+</label>
+
+<label>
+    <input class="size-radio"
+           type="radio"
+           name="size2"
+           value="L"
+           checked>
+    <span class="size-btn">L</span>
+</label>
+
+<label>
+    <input class="size-radio"
+           type="radio"
+           name="size2"
+           value="XL">
+    <span class="size-btn">XL</span>
+</label>
+
+<label>
+    <input class="size-radio"
+           type="radio"
+           name="size2"
+           value="XXL">
+    <span class="size-btn">XXL</span>
+</label>
+
+</div>
+</div>
+
+</fieldset>
+
+<!-- بيانات الزبونة -->
+
+<div class="form-group">
+    <label for="name">الاسم الكامل:</label>
+    <input type="text"
+           id="name"
+           required
+           autocomplete="name"
+           placeholder="أدخلي اسمك الكامل">
+</div>
+
+<div class="form-group">
+    <label for="phone">رقم الهاتف:</label>
+    <input type="tel"
+           id="phone"
+           required
+           inputmode="tel"
+           autocomplete="tel"
+           placeholder="06XXXXXXXX أو 07XXXXXXXX">
+</div>
+
+<div class="form-group">
+    <label for="city">المدينة:</label>
+    <input type="text"
+           id="city"
+           required
+           autocomplete="address-level2"
+           placeholder="أدخلي مدينتك">
+</div>
+
+<div class="form-group">
+    <label for="address">العنوان الكامل:</label>
+    <input type="text"
+           id="address"
+           required
+           autocomplete="street-address"
+           placeholder="الحي، رقم المنزل أو الشارع">
+</div>
+
+<div class="order-total">
+    <span>المجموع:</span>
+    <strong id="orderTotal">239 DH</strong>
+</div>
+
+<button type="submit" class="submit-btn">
+    تأكيد الطلب عبر الواتساب 🛒
+</button>
+
+</form>
+</section>
+
+<!-- آراء الزبونات -->
+<section class="reviews-section">
+
+<h3>آراء زبوناتنا الغاليات ❤️</h3>
+
+<p class="review-note">
+    آراء زبونات على منتجات سابقة من المتجر.
+</p>
+
+<div class="review-card">
+    <div class="review-header">
+        <span class="reviewer-name">Fatimazahra</span>
+        <span class="stars">★★★★★</span>
+    </div>
+
+    <p class="review-text">
+        الكسوة وصلتني اليوم غزالة بزااف تبارك الله،
+        التوب بارد ورطب بحال الحرير والدانتيل مفيني ناضي
+        شكراً ليكم على المعاملة الله يسر ليكم
+    </p>
+</div>
+
+<div class="review-card">
+    <div class="review-header">
+        <span class="reviewer-name">Sanae</span>
+        <span class="stars">★★★★★</span>
+    </div>
+
+    <p class="review-text">
+        الصراحة الجودة هربانة بزااف خديت اللون الأبيض،
+        جا كيحمق فاللبسة وجا العبار مضبوط تماماً.
+        شكراً بزاف
+    </p>
+</div>
+
+</section>
+
+<!-- أسئلة متكررة -->
+<section class="faq-section">
+
+<h3>أسئلة متكررة</h3>
+
+<div class="faq-item">
+    <div class="faq-question">
+        شنو فيه الطقم؟
+    </div>
+    <div class="faq-answer">
+        الطقم فيه 3 قطع: بينوار Fluffy،
+        صديرية تريكو قصيرة وناعمة،
+        وسروال طويل أو شورت.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        واش نقدر نختار لون السروال؟
+    </div>
+    <div class="faq-answer">
+        نعم، تقدري تختاري اللون الأبيض
+        أو نفس لون البينوار،
+        سواء اخترتي سروال طويل أو Short.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        واش نقدر ناخد جوج أطقم مختلفين؟
+    </div>
+    <div class="faq-answer">
+        أكيد، عرض 419 درهم كيسمح ليك
+        تختاري لكل طقم اللون والمقاس
+        ونوع السروال ولونو بشكل مستقل.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        شحال كياخد التوصيل؟
+    </div>
+    <div class="faq-answer">
+        التوصيل كياخد ما بين 24 و48 ساعة،
+        والدفع كيكون عند الاستلام.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        واش نقدر نعاين الطقم قبل ما نخلص؟
+    </div>
+    <div class="faq-answer">
+        أكيد، من حقك تعايني جودة الثوب
+        قبل ما تدفعي للموزع.
+    </div>
+</div>
+
+</section>
+
+</main>
+
+<!-- الزر الثابت -->
+<div class="sticky-footer">
+    <a href="#order-section" class="sticky-btn">
+        اطلبي الآن بسرعة 🚀
+    </a>
+</div>
+
+<footer>
+    <p>البريد الإلكتروني: Alafaricontact@gmail.com</p>
+    <p>المقر: Rabat - Maroc</p>
+    <p>
+        الهاتف / واتساب:
+        <span dir="ltr">+212 7 08 781407</span>
+    </p>
+    <p>جميع الحقوق محفوظة &copy; 2026</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+
+const PRICES = {
+    one: 239,
+    two: 419
+};
+
+const WHATSAPP_NUMBER = '212708781407';
+
+const PRODUCT_NAME =
+    'طقم Fluffy نسائي من 3 قطع';
+
+const form =
+    document.getElementById('orderForm');
+
+const secondSet =
+    document.getElementById('secondSet');
+
+const total =
+    document.getElementById('orderTotal');
+
+const savingsNote =
+    document.getElementById('savings-note');
+
+// قراءة الاختيار
+function selectedValue(name) {
+    const element = document.querySelector(
+        'input[name="' + name + '"]:checked'
+    );
+
+    return element ? element.value : '';
+}
+
+// تحديث العرض
+function updateOffer() {
+
+    const isTwo =
+        selectedValue('offer') === 'two';
+
+    document.querySelectorAll('.offer-card')
+        .forEach(card => {
+            const radio =
+                card.querySelector('input[name="offer"]');
+
+            card.classList.toggle(
+                'selected',
+                radio.checked
+            );
+        });
+
+    secondSet.disabled = !isTwo;
+
+    secondSet.classList.toggle(
+        'visible',
+        isTwo
+    );
+
+    total.textContent =
+        (isTwo ? PRICES.two : PRICES.one) + ' DH';
+
+    savingsNote.textContent = isTwo
+        ? '🔥 توفري 59 درهم مقارنة بشراء جوج أطقم منفصلين'
+        : '';
+}
+
+document.querySelectorAll('input[name="offer"]')
+    .forEach(radio => {
+        radio.addEventListener('change', updateOffer);
+    });
+
+updateOffer();
+
+// تحديث لون السروال حسب لون البينوار
+function updateMatchedColorLabel(number) {
+
+    const colorSelect =
+        document.getElementById('color' + number);
+
+    const color =
+        colorSelect.value;
+
+    const label =
+        document.getElementById(
+            'matchedColorLabel' + number
+        );
+
+    label.textContent =
+        '🎨 نفس لون البينوار (' + color + ')';
+}
+
+[1, 2].forEach(number => {
+
+    document.getElementById('color' + number)
+        .addEventListener('change', function() {
+            updateMatchedColorLabel(number);
+        });
+
+    updateMatchedColorLabel(number);
+
+});
+
+// استخراج تفاصيل الطقم
+function getSetDetails(number) {
+
+    const pants =
+        selectedValue('pants' + number);
+
+    const topColor =
+        document.getElementById(
+            'color' + number
+        ).value;
+
+    const bottomChoice =
+        selectedValue('bottomColor' + number);
+
+    const bottomColor =
+        bottomChoice === 'match'
+            ? topColor
+            : 'أبيض';
+
+    const size =
+        selectedValue('size' + number);
+
+    return [
+        '👖 نوع السروال: ' + pants,
+        '🎨 لون البينوار والصديرية: ' + topColor,
+        '🤍 لون السروال أو الشورت: ' + bottomColor,
+        '📏 المقاس: ' + size
+    ].join('\n');
+
+}
+
+// إرسال الطلب إلى WhatsApp
+form.addEventListener('submit', function(event) {
+
+    event.preventDefault();
+
+    if (!form.reportValidity()) {
+        return;
+    }
+
+    const phoneInput =
+        document.getElementById('phone');
+
+    const phone =
+        phoneInput.value.replace(/[\s.-]/g, '');
+
+    const phoneRegex =
+        /^(06|07)[0-9]{8}$/;
+
+    if (!phoneRegex.test(phone)) {
+
+        alert(
+            'المرجو إدخال رقم هاتف مغربي صحيح يبدأ بـ 06 أو 07 ويتكون من 10 أرقام.'
+        );
+
+        phoneInput.focus();
+
+        return;
+    }
+
+    const isTwo =
+        selectedValue('offer') === 'two';
+
+    const price =
+        isTwo ? PRICES.two : PRICES.one;
+
+    const offer =
+        isTwo
+            ? 'جوج أطقم (6 قطع)'
+            : 'طقم واحد (3 قطع)';
+
+    const name =
+        document.getElementById('name')
+            .value.trim();
+
+    const city =
+        document.getElementById('city')
+            .value.trim();
+
+    const address =
+        document.getElementById('address')
+            .value.trim();
+
+    const messageLines = [
+
+        'مرحباً، أريد تأكيد طلب ' + PRODUCT_NAME,
+
+        '📌 العرض: ' + offer,
+
+        '💰 الثمن: ' + price + ' درهم',
+
+        '',
+
+        '🧸 الطقم الأول:',
+
+        getSetDetails(1)
+
+    ];
+
+    if (isTwo) {
+
+        messageLines.push(
+            '',
+            '🧸 الطقم الثاني:',
+            getSetDetails(2)
+        );
+
+    }
+
+    messageLines.push(
+
+        '',
+
+        '👤 الاسم: ' + name,
+
+        '📱 الهاتف: ' + phone,
+
+        '🏙️ المدينة: ' + city,
+
+        '📍 العنوان: ' + address
+
+    );
+
+    const rawMessage =
+        messageLines.join('\n');
+
+    const whatsappUrl =
+        'https://wa.me/' +
+        WHATSAPP_NUMBER +
+        '?text=' +
+        encodeURIComponent(rawMessage);
+
+    // Meta Pixel Lead
+    // يسجل محاولة التواصل عبر WhatsApp
+    // بعد تعبئة الفورم والتحقق من الهاتف.
+    // لا يعني بالضرورة إرسال الرسالة فعلياً.
+
+    if (typeof fbq === 'function') {
+
+        fbq('track', 'Lead', {
+
+            content_name:
+                'Fluffy Pajama Set 3 Pieces',
+
+            content_category:
+                'Loungewear',
+
+            currency: 'MAD',
+
+            value: price
+
+        });
+
+    }
+
+    // فتح واتساب برسالة الطلب
+    window.location.assign(whatsappUrl);
+
+});
+
+</script>
+
+</body>
+</html>
