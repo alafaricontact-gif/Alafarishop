@@ -1,19 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>طقم Fluffy النسائي من 3 قطع | AlaFari Shop</title>
+<meta name="theme-color" content="#111111">
+
+<title>طقم Fluffy Sherpa من 3 قطع | AlaFari Shop</title>
+
+<meta name="description" content="طقم Fluffy Sherpa النسائي: بينوار بقبعة وحزام، صدرية ناعمة وشورت. متوفر بستة ألوان مع التوصيل للمغرب.">
+
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --bg-dark: #111111;
-    --card-dark: #1a1a1a;
-    --text-light: #ffffff;
-    --text-gray: #aaaaaa;
-    --gold-accent: #d4a373;
-    --whatsapp-green: #25D366;
+    --bg: #111111;
+    --card: #1a1a1a;
+    --gold: #d4a373;
+    --muted: #aaaaaa;
+    --green: #25D366;
 }
 
 * {
@@ -21,102 +26,223 @@
     margin: 0;
     padding: 0;
     font-family: 'Tajawal', sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
-    background: var(--bg-dark);
-    color: var(--text-light);
+    background: var(--bg);
+    color: white;
     line-height: 1.7;
-    font-size: 17px;
-    padding-bottom: 90px;
+    font-size: 16px;
+    padding-bottom: 88px;
+    overflow-x: hidden;
 }
 
 .top-bar {
-    background: var(--gold-accent);
-    color: black;
-    padding: 10px;
-    font-weight: 900;
+    background: var(--gold);
+    color: #111;
+    padding: 10px 12px;
     text-align: center;
-    overflow: hidden;
+    font-weight: 900;
+    font-size: 14px;
 }
 
 .header {
+    background: var(--card);
     text-align: center;
-    padding: 10px;
-    background: var(--card-dark);
+    padding: 9px;
     border-bottom: 1px solid #333;
 }
 
 .logo {
-    max-width: 85px;
+    width: 85px;
+    max-width: 100%;
     height: auto;
 }
 
 .container {
     max-width: 600px;
     margin: auto;
-    padding: 20px;
+    padding: 18px;
 }
 
 .main-title {
     font-size: 25px;
+    color: var(--gold);
     text-align: center;
-    margin: 20px 0 10px;
-    color: var(--gold-accent);
+    line-height: 1.4;
+    margin: 14px 0 8px;
     font-weight: 900;
 }
 
 .subtitle {
-    text-align: center;
     color: #e4d6cc;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 18px;
 }
 
-.image-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 25px;
+/* SLIDER */
+
+.slider {
+    position: relative;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #242424;
+    touch-action: pan-y;
 }
 
-.image-grid img {
+.slider-track {
+    display: flex;
+    direction: rtl;
+    transition: transform .45s ease;
+}
+
+.slide {
+    flex: 0 0 100%;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
     width: 100%;
-    height: 330px;
-    object-fit: cover;
-    border-radius: 12px;
-    background: #292929;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
+
+.slide-caption {
+    position: absolute;
+    bottom: 34px;
+    right: 12px;
+    background: #111c;
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #111b;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.slider-prev {
+    right: 10px;
+}
+
+.slider-next {
+    left: 10px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.slider-dots button {
+    background: transparent;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.slider-dots button::after {
+    content: "";
+    display: block;
+    width: 9px;
+    height: 9px;
+    background: #ffffff85;
+    border-radius: 50%;
+}
+
+.slider-dots button.active::after {
+    background: var(--gold);
+    width: 20px;
+    border-radius: 9px;
+}
+
+.slider-counter {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #111a;
+    color: white;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 12px;
+    direction: ltr;
+}
+
+/* AVANTAGES */
 
 .trust-badges {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0,1fr));
     gap: 8px;
-    margin-bottom: 25px;
+    margin-bottom: 23px;
     text-align: center;
 }
 
 .badge-item {
-    background: var(--card-dark);
-    padding: 12px 5px;
-    border-radius: 8px;
+    background: var(--card);
     border: 1px solid #333;
-    font-size: 13px;
+    border-radius: 8px;
+    padding: 11px 3px;
+    font-size: 12px;
     font-weight: 900;
-    color: var(--gold-accent);
+    color: var(--gold);
+}
+
+/* SECTIONS */
+
+.description-box,
+.order-section,
+.reviews-section,
+.faq-section {
+    background: var(--card);
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 12px;
+    margin-bottom: 24px;
 }
 
 .description-box {
-    background: var(--card-dark);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    border-right: 4px solid var(--gold-accent);
+    border-right: 4px solid var(--gold);
 }
 
-.description-box h3 {
-    color: var(--gold-accent);
-    margin-bottom: 12px;
+.description-box h3,
+.reviews-section h3,
+.faq-section h3 {
+    color: var(--gold);
+    margin-bottom: 13px;
+    font-size: 20px;
+}
+
+.reviews-section h3,
+.faq-section h3 {
+    text-align: center;
 }
 
 .description-box ul {
@@ -124,9 +250,9 @@ body {
 }
 
 .description-box li {
-    margin-bottom: 10px;
-    padding-right: 23px;
     position: relative;
+    padding-right: 22px;
+    margin-bottom: 9px;
     font-size: 15px;
 }
 
@@ -134,23 +260,25 @@ body {
     content: "✔";
     position: absolute;
     right: 0;
-    color: var(--gold-accent);
+    color: var(--gold);
 }
 
+/* PRIX */
+
 .price-tag {
-    text-align: center;
-    background: var(--card-dark);
-    padding: 20px;
+    background: var(--card);
+    border: 1px dashed var(--gold);
     border-radius: 12px;
-    border: 1px dashed var(--gold-accent);
-    margin-bottom: 25px;
+    padding: 17px;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
 .new-price {
     display: block;
-    color: var(--gold-accent);
     font-size: 34px;
     font-weight: 900;
+    color: var(--gold);
 }
 
 .pack-highlight {
@@ -158,53 +286,51 @@ body {
     color: #eee;
 }
 
+/* FORMULAIRE */
+
 .order-section {
-    background: var(--card-dark);
-    padding: 22px;
-    border-radius: 12px;
-    border: 1px solid #333;
-    margin-bottom: 25px;
-    scroll-margin-top: 15px;
+    scroll-margin-top: 12px;
 }
 
 .order-section h2 {
+    color: var(--gold);
+    font-size: 22px;
     text-align: center;
-    color: var(--gold-accent);
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .form-group {
-    margin-bottom: 17px;
+    margin-bottom: 16px;
 }
 
-.form-group > label,
-.field-label {
+.field-label,
+.form-group > label {
     display: block;
-    margin-bottom: 7px;
-    font-weight: 900;
     font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 7px;
 }
 
-.form-group input:not([type="radio"]),
+.form-group input:not([type=radio]),
 .form-group select {
     width: 100%;
     padding: 12px;
-    background: #222;
-    border: 1px solid #444;
+    min-height: 46px;
+    background: #242424;
+    border: 1px solid #555;
     border-radius: 8px;
     color: white;
     font-size: 16px;
-    direction: rtl;
+    text-align: right;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-    outline: 2px solid var(--gold-accent);
+.form-group input:focus-visible,
+.form-group select:focus-visible {
+    outline: 2px solid var(--gold);
 }
 
 .offers-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 10px;
 }
 
@@ -212,50 +338,52 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 8px;
     background: #222;
     border: 2px solid #444;
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 9px;
     cursor: pointer;
-    gap: 10px;
 }
 
 .offer-card.selected {
-    border-color: var(--gold-accent);
-    background: rgba(212,163,115,0.12);
+    border-color: var(--gold);
+    background: #d4a37318;
 }
 
 .offer-card input {
-    margin-left: 8px;
-    accent-color: var(--gold-accent);
+    accent-color: var(--gold);
+    margin-left: 7px;
 }
 
 .offer-price {
-    color: var(--gold-accent);
-    font-weight: 900;
     white-space: nowrap;
+    color: var(--gold);
+    font-weight: 900;
 }
 
 .save-note {
-    color: var(--gold-accent);
     text-align: center;
-    font-size: 14px;
-    margin-top: 8px;
+    color: var(--gold);
+    font-size: 13px;
+    margin-top: 7px;
+    min-height: 19px;
 }
 
 .set-card {
-    background: #202020;
+    background: #222;
     border: 1px solid #444;
     border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px;
     min-width: 0;
+    padding: 14px;
+    margin-bottom: 18px;
 }
 
 .set-card legend {
-    color: var(--gold-accent);
+    color: var(--gold);
+    font-size: 17px;
     font-weight: 900;
-    padding: 0 8px;
+    padding: 0 7px;
 }
 
 .second-set {
@@ -266,149 +394,133 @@ body {
     display: block;
 }
 
-.pants-options {
+/* OPTIONS */
+
+.choice-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 9px;
 }
 
-.pants-options label {
+.choice-grid label,
+.size-options label {
     cursor: pointer;
+    position: relative;
 }
 
-.pants-options input {
+.choice-grid input,
+.size-options input {
     position: absolute;
     opacity: 0;
     width: 1px;
     height: 1px;
 }
 
-.pants-options span {
+.choice-grid span {
     display: block;
-    text-align: center;
-    padding: 11px 5px;
-    border-radius: 8px;
-    border: 2px solid #444;
     background: #292929;
-    font-size: 14px;
-    font-weight: 900;
-}
-
-.pants-options input:checked + span {
-    border-color: var(--gold-accent);
-    background: rgba(212,163,115,0.2);
-    color: var(--gold-accent);
-}
-
-.pants-options input:focus-visible + span {
-    outline: 2px solid white;
-}
-
-.size-selector {
-    margin-bottom: 15px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 10px 5px;
     text-align: center;
+    font-weight: 900;
+    font-size: 14px;
+    min-height: 44px;
+}
+
+.choice-grid input:checked + span,
+.size-options input:checked + span {
+    border-color: var(--gold);
+    color: #111;
+    background: var(--gold);
+}
+
+.choice-grid input:focus-visible + span,
+.size-options input:focus-visible + span {
+    outline: 2px solid white;
+    outline-offset: 2px;
 }
 
 .size-options {
     display: flex;
-    flex-wrap: wrap;
+    gap: 7px;
     justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
+    flex-wrap: wrap;
 }
 
-.size-radio {
-    position: absolute;
-    opacity: 0;
-    width: 1px;
-    height: 1px;
-}
-
-.size-btn {
-    display: inline-block;
+.size-options span {
+    display: block;
     min-width: 45px;
-    padding: 8px;
-    background: #292929;
-    color: white;
+    padding: 7px 9px;
     border: 2px solid #444;
     border-radius: 8px;
+    background: #292929;
+    color: white;
     text-align: center;
     font-weight: 900;
-    cursor: pointer;
 }
 
-.size-radio:checked + .size-btn {
-    background: var(--gold-accent);
-    color: black;
-    border-color: var(--gold-accent);
-}
-
-.size-radio:focus-visible + .size-btn {
-    outline: 2px solid white;
+.note {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 6px;
 }
 
 .order-total {
-    border-top: 1px solid #444;
-    padding: 15px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #444;
+    padding: 14px 0;
     font-weight: 900;
 }
 
 .order-total strong {
-    color: var(--gold-accent);
+    color: var(--gold);
     font-size: 24px;
 }
 
-.submit-btn {
-    background: var(--whatsapp-green);
-    color: white;
-    border: none;
+.submit-btn,
+.sticky-btn {
+    display: block;
     width: 100%;
-    padding: 16px;
-    font-size: 18px;
-    font-weight: 900;
+    border: 0;
     border-radius: 8px;
+    background: var(--green);
+    color: #062c14;
+    padding: 14px;
+    font-weight: 900;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
     cursor: pointer;
-    animation: pulse 1.5s infinite;
+}
+
+.submit-btn {
+    animation: pulse 1.8s infinite;
 }
 
 @keyframes pulse {
-    0%, 100% {transform: scale(1);}
-    50% {transform: scale(1.025);}
+    50% {
+        transform: scale(1.025);
+    }
 }
 
-.reviews-section,
-.faq-section {
-    background: var(--card-dark);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    border: 1px solid #333;
-}
-
-.reviews-section h3,
-.faq-section h3 {
-    color: var(--gold-accent);
-    text-align: center;
-    margin-bottom: 15px;
-}
+/* AVIS */
 
 .review-card {
+    padding: 13px;
     background: #222;
-    padding: 14px;
-    border-radius: 8px;
-    margin-bottom: 12px;
     border: 1px solid #333;
+    border-radius: 8px;
+    margin-bottom: 11px;
 }
 
 .review-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 6px;
-}
-
-.reviewer-name {
+    gap: 10px;
+    font-size: 15px;
     font-weight: 900;
 }
 
@@ -422,143 +534,157 @@ body {
 }
 
 .review-note {
-    color: #aaa;
     font-size: 12px;
+    color: var(--muted);
     margin-bottom: 12px;
 }
 
+/* FAQ */
+
 .faq-item {
-    margin-bottom: 12px;
     border-bottom: 1px solid #333;
     padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.faq-item:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .faq-question {
+    font-size: 15px;
     font-weight: 900;
     margin-bottom: 5px;
 }
 
 .faq-answer {
-    color: #aaa;
     font-size: 14px;
+    color: var(--muted);
 }
+
+/* FOOTER */
 
 .sticky-footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
-    background: var(--card-dark);
-    text-align: center;
-    padding: 10px;
-    z-index: 100;
+    right: 0;
+    background: #1a1a1af2;
     border-top: 1px solid #333;
+    padding: 9px 14px;
+    z-index: 20;
 }
 
 .sticky-btn {
-    display: inline-block;
-    background: var(--whatsapp-green);
-    color: white;
-    text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: 900;
-    animation: pulse 1.5s infinite;
+    max-width: 380px;
+    margin: auto;
+    border-radius: 28px;
+    padding: 10px;
 }
 
 footer {
     background: #0a0a0a;
-    color: #aaa;
+    color: var(--muted);
     text-align: center;
     padding: 20px;
     font-size: 14px;
 }
 
 footer p {
-    margin: 5px 0;
+    margin: 4px 0;
 }
 
-@media(max-width:420px) {
-    .container {padding: 14px;}
-    .image-grid img {height: 245px;}
-    .main-title {font-size: 22px;}
-    .badge-item {font-size: 11px;}
-    .order-section {padding: 16px;}
+/* VERSION MOBILE */
+
+@media(max-width:430px) {
+    .container {
+        padding: 12px;
+    }
+
+    .main-title {
+        font-size: 22px;
+    }
+
+    .slider {
+        border-radius: 10px;
+    }
+
+    .description-box,
+    .order-section,
+    .reviews-section,
+    .faq-section {
+        padding: 15px;
+    }
+
+    .badge-item {
+        font-size: 11px;
+        padding: 9px 3px;
+    }
+
+    .slider-arrow {
+        height: 38px;
+        width: 38px;
+        font-size: 24px;
+    }
+
+    .order-section h2 {
+        font-size: 20px;
+    }
 }
 
 @media(prefers-reduced-motion:reduce) {
-    * {
+    *,
+    *::before,
+    *::after {
         animation: none !important;
         scroll-behavior: auto !important;
+        transition: none !important;
     }
 }
 </style>
 
-<!-- Meta Pixel Code -->
+<!-- META PIXEL -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(
-window,document,'script',
+!function(f,b,e,v,n,t,s) {
+    if(f.fbq)return;
+    n=f.fbq=function() {
+        n.callMethod ?
+        n.callMethod.apply(n,arguments) :
+        n.queue.push(arguments);
+    };
+    if(!f._fbq)f._fbq=n;
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+    t=b.createElement(e);
+    t.async=!0;
+    t.src=v;
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s);
+}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
 fbq('init','1403845545026782');
+fbq('init','2037269343602550');
 fbq('track','PageView');
 </script>
 
 <noscript>
-<img height="1" width="1" style="display:none"
-alt=""
+<img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=1403845545026782&amp;ev=PageView&amp;noscript=1">
+<img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=2037269343602550&amp;ev=PageView&amp;noscript=1">
 </noscript>
-<!-- End Meta Pixel Code -->
-
-
-
-
-
-
-
-
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2037269343602550');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2037269343602550&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-
-
-
-
-
-
-
-    
 
 </head>
-
 <body>
 
 <div class="top-bar">
-    ⚡ توصيل مجاني وسريع لجميع مدن المغرب | الدفع عند الاستلام بعد المعاينة ⚡
+    ⚡ توصيل مجاني وسريع لجميع مدن المغرب |
+    الدفع عند الاستلام بعد المعاينة ⚡
 </div>
 
 <header class="header">
@@ -568,28 +694,109 @@ src="https://www.facebook.com/tr?id=2037269343602550&ev=PageView&noscript=1"
 <main class="container">
 
 <h1 class="main-title">
-    طقم Fluffy النسائي من 3 قطع 🧸✨
+    طقم Fluffy Sherpa النسائي من 3 قطع 🧸✨
 </h1>
 
 <p class="subtitle">
-    بينوار فلافي ناعم + صديرية تريكو قصيرة + سروال طويل أو شورت ❤️
+    بينوار ناعم بقبعة وحزام +
+    صدرية قصيرة + شورت متناسق ❤️
 </p>
 
-<!-- صور المنتوج -->
-<div class="image-grid">
-    <img src="img1.webp" alt="طقم Fluffy الصورة الأولى">
-    <img src="img2.webp" alt="طقم Fluffy الصورة الثانية" loading="lazy">
-    <img src="img3.webp" alt="طقم Fluffy الصورة الثالثة" loading="lazy">
-    <img src="img4.webp" alt="طقم Fluffy الصورة الرابعة" loading="lazy">
-     <img src="img5.webp" alt="طقم Fluffy الصورة الثالثة" loading="lazy">
-    <img src="img6.webp" alt="طقم Fluffy الصورة الرابعة" loading="lazy">
-</div>
+<!-- SLIDER 6 COULEURS -->
+
+<section class="slider"
+         id="productSlider"
+         aria-label="صور ألوان الطقم">
+
+    <div class="slider-track" id="sliderTrack">
+
+        <div class="slide">
+            <img src="img1.webp"
+                 alt="طقم Sherpa وردي"
+                 fetchpriority="high">
+            <span class="slide-caption">
+                وردي | Rose
+            </span>
+        </div>
+
+        <div class="slide">
+            <img src="img2.webp"
+                 alt="طقم Sherpa رمادي"
+                 loading="lazy">
+            <span class="slide-caption">
+                رمادي | Gris
+            </span>
+        </div>
+
+        <div class="slide">
+            <img src="img3.webp"
+                 alt="طقم Sherpa بيج"
+                 loading="lazy">
+            <span class="slide-caption">
+                بيج | Beige
+            </span>
+        </div>
+
+        <div class="slide">
+            <img src="img4.webp"
+                 alt="طقم Sherpa أبيض كريما"
+                 loading="lazy">
+            <span class="slide-caption">
+                أبيض كريما | Blanc cassé
+            </span>
+        </div>
+
+        <div class="slide">
+            <img src="img5.webp"
+                 alt="طقم Sherpa بنفسجي"
+                 loading="lazy">
+            <span class="slide-caption">
+                بنفسجي | Violet
+            </span>
+        </div>
+
+        <div class="slide">
+            <img src="img6.webp"
+                 alt="طقم Sherpa أسود"
+                 loading="lazy">
+            <span class="slide-caption">
+                أسود | Noir
+            </span>
+        </div>
+
+    </div>
+
+    <button type="button"
+            class="slider-arrow slider-prev"
+            id="prevSlide"
+            aria-label="الصورة السابقة">
+        &#10095;
+    </button>
+
+    <button type="button"
+            class="slider-arrow slider-next"
+            id="nextSlide"
+            aria-label="الصورة التالية">
+        &#10094;
+    </button>
+
+    <div class="slider-counter" id="sliderCounter">
+        1 / 6
+    </div>
+
+    <div class="slider-dots" id="sliderDots"></div>
+
+</section>
+
+<!-- AVANTAGES -->
 
 <div class="trust-badges">
     <div class="badge-item">🚚 توصيل مجاني</div>
     <div class="badge-item">🤝 الدفع بعد المعاينة</div>
-    <div class="badge-item">🧸 Fleece ناعم</div>
+    <div class="badge-item">🧸 ثوب Sherpa ناعم</div>
 </div>
+
+<!-- DESCRIPTION -->
 
 <section class="description-box">
 
@@ -597,46 +804,55 @@ src="https://www.facebook.com/tr?id=2037269343602550&ev=PageView&noscript=1"
 
 <ul>
     <li>
-        <strong>طقم متكامل من 3 قطع:</strong>
-        بينوار فلافي ناعم، صديرية تريكو قصيرة وناعمة،
-        وسروال طويل أو شورت حسب اختيارك.
+        <strong>طقم من 3 قطع:</strong>
+        بينوار Sherpa بقبعة وحزام،
+        صدرية قصيرة وناعمة،
+        وشورت بنفس لون البينوار.
     </li>
 
     <li>
-        <strong>ثوب Fleece:</strong>
-        ثوب منفوش وناعم ومريح على البشرة،
-        مناسب للأجواء الباردة.
+        <strong>ثوب Sherpa:</strong>
+        ناعم ومنفوش ومريح على البشرة،
+        كيعطي إحساس بالدفء والراحة.
     </li>
 
     <li>
-        <strong>اختيار نوع السروال:</strong>
-        تقدري تختاري سروال طويل (Long)
-        أو شورت (Short).
+        <strong>تصميم أنيق:</strong>
+        بينوار مفتوح مع حزام قابل للربط،
+        وشورت بخصر مطاطي ورباط قابل للتعديل.
     </li>
 
     <li>
         <strong>6 ألوان:</strong>
-        البنفسجي، الوردي، البيج، الأزرق،
-        الرمادي والمورتيلا.
+        الوردي، الرمادي، البيج،
+        الأبيض المكسور، البنفسجي والأسود.
     </li>
 
     <li>
-        <strong>لون القطعة السفلية:</strong>
-        عندك الاختيار بين الأبيض
-        أو نفس لون البينوار، سواء سروال أو شورت.
+        <strong>اختيار لون الصدرية:</strong>
+        الأبيض المكسور أو نفس لون البينوار.
+        الشورت دائماً بنفس لون البينوار.
     </li>
 </ul>
 
 </section>
 
+<!-- PRIX -->
+
 <div class="price-tag">
-    <span>عرض الطقم الواحد (3 قطع)</span>
-    <span class="new-price">239 درهم فقط!</span>
+    <span>عرض طقم واحد (3 قطع)</span>
+
+    <strong class="new-price">
+        239 درهم فقط!
+    </strong>
 
     <p class="pack-highlight">
-        🔥 جوج أطقم بـ419 درهم فقط — توفري 59 درهم
+        🔥 جوج أطقم بـ419 درهم فقط —
+        توفري 59 درهم
     </p>
 </div>
+
+<!-- FORMULAIRE -->
 
 <section class="order-section" id="order-section">
 
@@ -644,399 +860,331 @@ src="https://www.facebook.com/tr?id=2037269343602550&ev=PageView&noscript=1"
 
 <form id="orderForm">
 
-<!-- اختيار العرض -->
-<div class="form-group">
-
-<span class="field-label">اختاري العرض المناسب:</span>
-
-<div class="offers-container">
-
-<label class="offer-card selected">
-    <span>
-        <input type="radio"
-               name="offer"
-               value="one"
-               checked>
-        <strong>طقم واحد (3 قطع)</strong>
-    </span>
-    <span class="offer-price">239 DH</span>
-</label>
-
-<label class="offer-card">
-    <span>
-        <input type="radio"
-               name="offer"
-               value="two">
-        <strong>جوج أطقم (6 قطع) 🔥</strong>
-    </span>
-    <span class="offer-price">419 DH</span>
-</label>
-
-</div>
-
-<p class="save-note" id="savings-note"></p>
-
-</div>
-
-<!-- الطقم الأول -->
-<fieldset class="set-card">
-
-<legend>🧸 الطقم الأول</legend>
-
-<!-- نوع السروال أولا -->
-<div class="form-group">
-
-<span class="field-label">
-    1. اختاري نوع السروال:
-</span>
-
-<div class="pants-options">
-
-<label>
-    <input type="radio"
-           name="pants1"
-           value="سروال طويل (Long)"
-           checked>
-    <span>👖 سروال طويل</span>
-</label>
-
-<label>
-    <input type="radio"
-           name="pants1"
-           value="شورت (Short)">
-    <span>🩳 شورت Short</span>
-</label>
-
-</div>
-</div>
-
-<!-- اللون -->
-<div class="form-group">
-
-<label for="color1">
-    2. اختاري لون البينوار والصديرية:
-</label>
-
-<select id="color1" required>
-    <option value="بنفسجي">بنفسجي (Violet)</option>
-    <option value="وردي">وردي (Rose)</option>
-    <option value="بيج">بيج (Beige)</option>
-    <option value="أزرق">أزرق (Bleu)</option>
-    <option value="رمادي">رمادي (Gris)</option>
-    <option value="مورتيلا">مورتيلا (Mortadella)</option>
-</select>
-
-</div>
-
-<!-- لون القطعة السفلية -->
-<div class="form-group">
-
-<span class="field-label">
-    3. اختاري لون السروال أو الشورت:
-</span>
-
-<div class="pants-options">
-
-<label>
-    <input type="radio"
-           name="bottomColor1"
-           value="white"
-           checked>
-    <span>🤍 أبيض</span>
-</label>
-
-<label>
-    <input type="radio"
-           name="bottomColor1"
-           value="match">
-    <span id="matchedColorLabel1">
-        🎨 نفس لون البينوار
-    </span>
-</label>
-
-</div>
-</div>
-
-<!-- المقاس -->
-<div class="size-selector">
-
-<span class="field-label">
-    4. اختاري المقاس:
-</span>
-
-<div class="size-options">
-
-<label>
-    <input class="size-radio"
-           type="radio"
-           name="size1"
-           value="S">
-    <span class="size-btn">S</span>
-</label>
-
-<label>
-    <input class="size-radio"
-           type="radio"
-           name="size1"
-           value="M">
-    <span class="size-btn">M</span>
-</label>
-
-<label>
-    <input class="size-radio"
-           type="radio"
-           name="size1"
-           value="L"
-           checked>
-    <span class="size-btn">L</span>
-</label>
-
-<label>
-    <input class="size-radio"
-           type="radio"
-           name="size1"
-           value="XL">
-    <span class="size-btn">XL</span>
-</label>
-
-<label>
-    <input class="size-radio"
-           type="radio"
-           name="size1"
-           value="XXL">
-    <span class="size-btn">XXL</span>
-</label>
-
-</div>
-</div>
-
-</fieldset>
-
-<!-- الطقم الثاني -->
-<fieldset class="set-card second-set"
-          id="secondSet"
-          disabled>
-
-<legend>🧸 الطقم الثاني</legend>
-
-<!-- نوع السروال -->
-<div class="form-group">
-
-<span class="field-label">
-    1. اختاري نوع السروال:
-</span>
-
-<div class="pants-options">
-
-<label>
-    <input type="radio"
-           name="pants2"
-           value="سروال طويل (Long)"
-           checked>
-    <span>👖 سروال طويل</span>
-</label>
-
-<label>
-    <input type="radio"
-           name="pants2"
-           value="شورت (Short)">
-    <span>🩳 شورت Short</span>
-</label>
-
-</div>
-</div>
-
-<!-- اللون -->
-<div class="form-group">
-
-<label for="color2">
-    2. اختاري لون البينوار والصديرية:
-</label>
-
-<select id="color2" required>
-    <option value="بنفسجي">بنفسجي (Violet)</option>
-    <option value="وردي">وردي (Rose)</option>
-    <option value="بيج">بيج (Beige)</option>
-    <option value="أزرق">أزرق (Bleu)</option>
-    <option value="رمادي">رمادي (Gris)</option>
-    <option value="مورتيلا">مورتيلا (Mortadella)</option>
-</select>
-
-</div>
-
-<!-- لون القطعة السفلية -->
-<div class="form-group">
-
-<span class="field-label">
-    3. اختاري لون السروال أو الشورت:
-</span>
-
-<div class="pants-options">
-
-<label>
-    <input type="radio"
-           name="bottomColor2"
-           value="white"
-           checked>
-    <span>🤍 أبيض</span>
-</label>
-
-<label>
-    <input type="radio"
-           name="bottomColor2"
-           value="match">
-    <span id="matchedColorLabel2">
-        🎨 نفس لون البينوار
-    </span>
-</label>
-
-</div>
-</div>
-
-<!-- المقاس -->
-<div class="size-selector">
-
-<span class="field-label">
-    4. اختاري المقاس:
-</span>
-
-<div class="size-options">
-
-<label>
-    <input class="size-radio"
-           type="radio"
-           name="size2"
-           value="S">
-    <span class="size-btn">S</span>
-</label>
-
-<label>
-    <input class="size-radio"
-           type="radio"
-           name="size2"
-           value="M">
-    <span class="size-btn">M</span>
-</label>
-
-<label>
-    <input class="size-radio"
-           type="radio"
-           name="size2"
-           value="L"
-           checked>
-    <span class="size-btn">L</span>
-</label>
-
-<label>
-    <input class="size-radio"
-           type="radio"
-           name="size2"
-           value="XL">
-    <span class="size-btn">XL</span>
-</label>
-
-<label>
-    <input class="size-radio"
-           type="radio"
-           name="size2"
-           value="XXL">
-    <span class="size-btn">XXL</span>
-</label>
-
-</div>
-</div>
-
-</fieldset>
-
-<!-- بيانات الزبونة -->
-
-<div class="form-group">
-    <label for="name">الاسم الكامل:</label>
-    <input type="text"
-           id="name"
-           required
-           autocomplete="name"
-           placeholder="أدخلي اسمك الكامل">
-</div>
-
-<div class="form-group">
-    <label for="phone">رقم الهاتف:</label>
-    <input type="tel"
-           id="phone"
-           required
-           inputmode="tel"
-           autocomplete="tel"
-           placeholder="06XXXXXXXX أو 07XXXXXXXX">
-</div>
-
-<div class="form-group">
-    <label for="city">المدينة:</label>
-    <input type="text"
-           id="city"
-           required
-           autocomplete="address-level2"
-           placeholder="أدخلي مدينتك">
-</div>
-
-<div class="form-group">
-    <label for="address">العنوان الكامل:</label>
-    <input type="text"
-           id="address"
-           required
-           autocomplete="street-address"
-           placeholder="الحي، رقم المنزل أو الشارع">
-</div>
-
-<div class="order-total">
-    <span>المجموع:</span>
-    <strong id="orderTotal">239 DH</strong>
-</div>
-
-<button type="submit" class="submit-btn">
-    تأكيد الطلب عبر الواتساب 🛒
-</button>
+    <!-- OFFRE -->
+
+    <div class="form-group">
+
+        <span class="field-label">
+            اختاري العرض المناسب:
+        </span>
+
+        <div class="offers-container">
+
+            <label class="offer-card selected">
+                <span>
+                    <input type="radio"
+                           name="offer"
+                           value="one"
+                           checked>
+                    طقم واحد (3 قطع)
+                </span>
+                <strong class="offer-price">239 DH</strong>
+            </label>
+
+            <label class="offer-card">
+                <span>
+                    <input type="radio"
+                           name="offer"
+                           value="two">
+                    جوج أطقم (6 قطع) 🔥
+                </span>
+                <strong class="offer-price">419 DH</strong>
+            </label>
+
+        </div>
+
+        <p id="savings-note" class="save-note"></p>
+
+    </div>
+
+    <!-- ENSEMBLE 1 -->
+
+    <fieldset class="set-card">
+
+        <legend>🧸 الطقم الأول</legend>
+
+        <div class="form-group">
+
+            <label for="color1">
+                1. اختاري لون البينوار والشورت:
+            </label>
+
+            <select id="color1" required>
+                <option value="وردي">وردي (Rose)</option>
+                <option value="رمادي">رمادي (Gris)</option>
+                <option value="بيج">بيج (Beige)</option>
+                <option value="أبيض كريما">أبيض كريما (Blanc cassé)</option>
+                <option value="بنفسجي">بنفسجي (Violet)</option>
+                <option value="أسود">أسود (Noir)</option>
+            </select>
+
+            <p class="note">
+                🩳 الشورت ديما بنفس لون البينوار.
+            </p>
+
+        </div>
+
+        <div class="form-group">
+
+            <span class="field-label">
+                2. اختاري لون الصدرية:
+            </span>
+
+            <div class="choice-grid">
+
+                <label>
+                    <input type="radio"
+                           name="topColor1"
+                           value="cream"
+                           checked>
+                    <span>🤍 أبيض كريما</span>
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="topColor1"
+                           value="match">
+                    <span>🎨 نفس لون البينوار</span>
+                </label>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <span class="field-label">
+                3. اختاري المقاس:
+            </span>
+
+            <div class="size-options">
+
+                <label>
+                    <input type="radio" name="size1" value="S">
+                    <span>S</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="size1" value="M">
+                    <span>M</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="size1" value="L" checked>
+                    <span>L</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="size1" value="XL">
+                    <span>XL</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="size1" value="XXL">
+                    <span>XXL</span>
+                </label>
+
+            </div>
+
+        </div>
+
+    </fieldset>
+
+    <!-- ENSEMBLE 2 -->
+
+    <fieldset class="set-card second-set"
+              id="secondSet"
+              disabled>
+
+        <legend>🧸 الطقم الثاني</legend>
+
+        <div class="form-group">
+
+            <label for="color2">
+                1. اختاري لون البينوار والشورت:
+            </label>
+
+            <select id="color2" required>
+                <option value="وردي">وردي (Rose)</option>
+                <option value="رمادي">رمادي (Gris)</option>
+                <option value="بيج">بيج (Beige)</option>
+                <option value="أبيض كريما">أبيض كريما (Blanc cassé)</option>
+                <option value="بنفسجي">بنفسجي (Violet)</option>
+                <option value="أسود">أسود (Noir)</option>
+            </select>
+
+            <p class="note">
+                🩳 الشورت ديما بنفس لون البينوار.
+            </p>
+
+        </div>
+
+        <div class="form-group">
+
+            <span class="field-label">
+                2. اختاري لون الصدرية:
+            </span>
+
+            <div class="choice-grid">
+
+                <label>
+                    <input type="radio"
+                           name="topColor2"
+                           value="cream"
+                           checked>
+                    <span>🤍 أبيض كريما</span>
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="topColor2"
+                           value="match">
+                    <span>🎨 نفس لون البينوار</span>
+                </label>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <span class="field-label">
+                3. اختاري المقاس:
+            </span>
+
+            <div class="size-options">
+
+                <label>
+                    <input type="radio" name="size2" value="S">
+                    <span>S</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="size2" value="M">
+                    <span>M</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="size2" value="L" checked>
+                    <span>L</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="size2" value="XL">
+                    <span>XL</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="size2" value="XXL">
+                    <span>XXL</span>
+                </label>
+
+            </div>
+
+        </div>
+
+    </fieldset>
+
+    <!-- CLIENT -->
+
+    <div class="form-group">
+        <label for="name">الاسم الكامل:</label>
+        <input id="name"
+               type="text"
+               autocomplete="name"
+               required
+               placeholder="أدخلي اسمك الكامل">
+    </div>
+
+    <div class="form-group">
+        <label for="phone">رقم الهاتف:</label>
+        <input id="phone"
+               type="tel"
+               inputmode="tel"
+               autocomplete="tel"
+               required
+               placeholder="06XXXXXXXX أو 07XXXXXXXX">
+    </div>
+
+    <div class="form-group">
+        <label for="city">المدينة:</label>
+        <input id="city"
+               type="text"
+               autocomplete="address-level2"
+               required
+               placeholder="أدخلي مدينتك">
+    </div>
+
+    <div class="form-group">
+        <label for="address">العنوان الكامل:</label>
+        <input id="address"
+               type="text"
+               autocomplete="street-address"
+               required
+               placeholder="الحي، رقم المنزل أو الشارع">
+    </div>
+
+    <div class="order-total">
+        <span>المجموع:</span>
+        <strong id="orderTotal">239 DH</strong>
+    </div>
+
+    <button class="submit-btn" type="submit">
+        تأكيد الطلب عبر الواتساب 🛒
+    </button>
 
 </form>
+
 </section>
 
-<!-- آراء الزبونات -->
+<!-- AVIS CLIENTS : EXEMPLES À VALIDER -->
+
 <section class="reviews-section">
 
-<h3>آراء زبوناتنا الغاليات ❤️</h3>
+<h3>نماذج لآراء الزبونات ❤️</h3>
 
 <p class="review-note">
-    آراء زبونات على منتجات سابقة من المتجر.
+    هاد النصوص أمثلة مقترحة وليست تقييمات موثقة.
+    عوّضيها بتعليقات حقيقية على طقم Sherpa قبل النشر.
 </p>
 
 <div class="review-card">
+
     <div class="review-header">
-        <span class="reviewer-name">Fatimazahra</span>
+        <span>Salma</span>
         <span class="stars">★★★★★</span>
     </div>
 
     <p class="review-text">
-        الكسوة وصلتني اليوم غزالة بزااف تبارك الله،
-        التوب بارد ورطب بحال الحرير والدانتيل مفيني ناضي
-        شكراً ليكم على المعاملة الله يسر ليكم
+        بيجامة وصلتني اليوم غزالة  بزااف تبارك الله،
+        البينوار والشورت ثوبهم رطب ومنفوش
+        وكيدفي مزيان، غير لي مابغاتش تبرع راسها،
+        شكراً ليكم على المعاملة الله يسر ليكم ❤️
     </p>
+
 </div>
 
 <div class="review-card">
+
     <div class="review-header">
-        <span class="reviewer-name">Sanae</span>
+        <span>ILHAME</span>
         <span class="stars">★★★★★</span>
     </div>
 
     <p class="review-text">
-        الصراحة الجودة هربانة بزااف خديت اللون الأبيض،
-        جا كيحمق فاللبسة وجا العبار مضبوط تماماً.
-        شكراً بزاف
-    </p>
+        الصراحة بيجامة  زوين بزاف،
+        خديت اللون بلون كاصي،
+        جا كيحمق فاللبسة، الثوب ناعم ودافي
+        والشورت جا العبار ديالو مضبوط تماماً.
+        حتى البينوار حبيتو،
+        شكراً بزاف     </p>
+
 </div>
 
 </section>
 
-<!-- أسئلة متكررة -->
+<!-- FAQ -->
+
 <section class="faq-section">
 
 <h3>أسئلة متكررة</h3>
@@ -1046,20 +1194,28 @@ src="https://www.facebook.com/tr?id=2037269343602550&ev=PageView&noscript=1"
         شنو فيه الطقم؟
     </div>
     <div class="faq-answer">
-        الطقم فيه 3 قطع: بينوار Fluffy،
-        صديرية تريكو قصيرة وناعمة،
-        وسروال طويل أو شورت.
+        طقم من 3 قطع: بينوار Sherpa بقبعة وحزام،
+        صدرية قصيرة ناعمة، وشورت.
     </div>
 </div>
 
 <div class="faq-item">
     <div class="faq-question">
-        واش نقدر نختار لون السروال؟
+        واش الشورت كيجي بنفس لون البينوار؟
     </div>
     <div class="faq-answer">
-        نعم، تقدري تختاري اللون الأبيض
-        أو نفس لون البينوار،
-        سواء اخترتي سروال طويل أو Short.
+        نعم، الشورت دائماً بنفس لون البينوار.
+        الاختيار ديال اللون الإضافي كيخص الصدرية فقط.
+    </div>
+</div>
+
+<div class="faq-item">
+    <div class="faq-question">
+        واش نقدر نختار لون الصدرية؟
+    </div>
+    <div class="faq-answer">
+        أكيد، تقدري تختاري الصدرية باللون الأبيض
+        المكسور أو نفس لون البينوار.
     </div>
 </div>
 
@@ -1068,9 +1224,9 @@ src="https://www.facebook.com/tr?id=2037269343602550&ev=PageView&noscript=1"
         واش نقدر ناخد جوج أطقم مختلفين؟
     </div>
     <div class="faq-answer">
-        أكيد، عرض 419 درهم كيسمح ليك
-        تختاري لكل طقم اللون والمقاس
-        ونوع السروال ولونو بشكل مستقل.
+        نعم، عرض 419 درهم كيسمح ليك تختاري
+        لكل طقم لون البينوار والشورت،
+        ولون الصدرية والمقاس بوحدهم.
     </div>
 </div>
 
@@ -1098,7 +1254,8 @@ src="https://www.facebook.com/tr?id=2037269343602550&ev=PageView&noscript=1"
 
 </main>
 
-<!-- الزر الثابت -->
+<!-- STICKY BUTTON -->
+
 <div class="sticky-footer">
     <a href="#order-section" class="sticky-btn">
         اطلبي الآن بسرعة 🚀
@@ -1115,68 +1272,48 @@ src="https://www.facebook.com/tr?id=2037269343602550&ev=PageView&noscript=1"
     <p>جميع الحقوق محفوظة &copy; 2026</p>
 </footer>
 
-<!-- JavaScript -->
 <script>
 
+// PRICES
 const PRICES = {
     one: 239,
     two: 419
 };
 
 const WHATSAPP_NUMBER = '212708781407';
+const form = document.getElementById('orderForm');
+const secondSet = document.getElementById('secondSet');
 
-const PRODUCT_NAME =
-    'طقم Fluffy نسائي من 3 قطع';
-
-const form =
-    document.getElementById('orderForm');
-
-const secondSet =
-    document.getElementById('secondSet');
-
-const total =
-    document.getElementById('orderTotal');
-
-const savingsNote =
-    document.getElementById('savings-note');
-
-// قراءة الاختيار
+// SELECTED RADIO
 function selectedValue(name) {
-    const element = document.querySelector(
+    return document.querySelector(
         'input[name="' + name + '"]:checked'
-    );
-
-    return element ? element.value : '';
+    )?.value || '';
 }
 
-// تحديث العرض
+// UPDATE OFFER
 function updateOffer() {
 
-    const isTwo =
-        selectedValue('offer') === 'two';
+    const two = selectedValue('offer') === 'two';
 
     document.querySelectorAll('.offer-card')
         .forEach(card => {
-            const radio =
-                card.querySelector('input[name="offer"]');
-
             card.classList.toggle(
                 'selected',
-                radio.checked
+                card.querySelector('input').checked
             );
         });
 
-    secondSet.disabled = !isTwo;
+    secondSet.disabled = !two;
+    secondSet.classList.toggle('visible', two);
 
-    secondSet.classList.toggle(
-        'visible',
-        isTwo
-    );
+    document.getElementById('orderTotal')
+        .textContent = (
+            two ? PRICES.two : PRICES.one
+        ) + ' DH';
 
-    total.textContent =
-        (isTwo ? PRICES.two : PRICES.one) + ' DH';
-
-    savingsNote.textContent = isTwo
+    document.getElementById('savings-note')
+        .textContent = two
         ? '🔥 توفري 59 درهم مقارنة بشراء جوج أطقم منفصلين'
         : '';
 }
@@ -1188,67 +1325,28 @@ document.querySelectorAll('input[name="offer"]')
 
 updateOffer();
 
-// تحديث لون السروال حسب لون البينوار
-function updateMatchedColorLabel(number) {
+// PRODUCT DETAILS - SHORT ONLY
+function getSetDetails(n) {
 
-    const colorSelect =
-        document.getElementById('color' + number);
-
-    const color =
-        colorSelect.value;
-
-    const label =
-        document.getElementById(
-            'matchedColorLabel' + number
-        );
-
-    label.textContent =
-        '🎨 نفس لون البينوار (' + color + ')';
-}
-
-[1, 2].forEach(number => {
-
-    document.getElementById('color' + number)
-        .addEventListener('change', function() {
-            updateMatchedColorLabel(number);
-        });
-
-    updateMatchedColorLabel(number);
-
-});
-
-// استخراج تفاصيل الطقم
-function getSetDetails(number) {
-
-    const pants =
-        selectedValue('pants' + number);
+    const robeColor =
+        document.getElementById('color' + n).value;
 
     const topColor =
-        document.getElementById(
-            'color' + number
-        ).value;
+        selectedValue('topColor' + n) === 'match'
+        ? robeColor
+        : 'أبيض كريما';
 
-    const bottomChoice =
-        selectedValue('bottomColor' + number);
-
-    const bottomColor =
-        bottomChoice === 'match'
-            ? topColor
-            : 'أبيض';
-
-    const size =
-        selectedValue('size' + number);
+    const size = selectedValue('size' + n);
 
     return [
-        '👖 نوع السروال: ' + pants,
-        '🎨 لون البينوار والصديرية: ' + topColor,
-        '🤍 لون السروال أو الشورت: ' + bottomColor,
+        '🧥 لون البينوار: ' + robeColor,
+        '🩳 الشورت: ' + robeColor,
+        '🤍 لون الصدرية: ' + topColor,
         '📏 المقاس: ' + size
     ].join('\n');
-
 }
 
-// إرسال الطلب إلى WhatsApp
+// WHATSAPP
 form.addEventListener('submit', function(event) {
 
     event.preventDefault();
@@ -1260,122 +1358,210 @@ form.addEventListener('submit', function(event) {
     const phoneInput =
         document.getElementById('phone');
 
-    const phone =
-        phoneInput.value.replace(/[\s.-]/g, '');
+    const phone = phoneInput.value.replace(
+        /[\s.-]/g, ''
+    );
 
-    const phoneRegex =
-        /^(06|07)[0-9]{8}$/;
-
-    if (!phoneRegex.test(phone)) {
+    if (!/^(06|07)\d{8}$/.test(phone)) {
 
         alert(
-            'المرجو إدخال رقم هاتف مغربي صحيح يبدأ بـ 06 أو 07 ويتكون من 10 أرقام.'
+            'المرجو إدخال رقم هاتف مغربي صحيح يبدأ بـ06 أو 07 ويتكون من 10 أرقام.'
         );
 
         phoneInput.focus();
-
         return;
     }
 
-    const isTwo =
-        selectedValue('offer') === 'two';
+    const two = selectedValue('offer') === 'two';
+    const price = two ? PRICES.two : PRICES.one;
 
-    const price =
-        isTwo ? PRICES.two : PRICES.one;
+    const message = [
 
-    const offer =
-        isTwo
-            ? 'جوج أطقم (6 قطع)'
-            : 'طقم واحد (3 قطع)';
+        'مرحباً، أريد تأكيد طلب طقم Fluffy Sherpa النسائي:',
 
-    const name =
-        document.getElementById('name')
-            .value.trim();
-
-    const city =
-        document.getElementById('city')
-            .value.trim();
-
-    const address =
-        document.getElementById('address')
-            .value.trim();
-
-    const messageLines = [
-
-        'مرحباً، أريد تأكيد طلب ' + PRODUCT_NAME,
-
-        '📌 العرض: ' + offer,
+        '📌 العرض: ' +
+        (two ? 'جوج أطقم (6 قطع)' : 'طقم واحد (3 قطع)'),
 
         '💰 الثمن: ' + price + ' درهم',
 
         '',
 
         '🧸 الطقم الأول:',
-
         getSetDetails(1)
 
     ];
 
-    if (isTwo) {
-
-        messageLines.push(
+    if (two) {
+        message.push(
             '',
             '🧸 الطقم الثاني:',
             getSetDetails(2)
         );
-
     }
 
-    messageLines.push(
+    message.push(
 
         '',
 
-        '👤 الاسم: ' + name,
+        '👤 الاسم: ' +
+        document.getElementById('name').value.trim(),
 
         '📱 الهاتف: ' + phone,
 
-        '🏙️ المدينة: ' + city,
+        '🏙️ المدينة: ' +
+        document.getElementById('city').value.trim(),
 
-        '📍 العنوان: ' + address
+        '📍 العنوان: ' +
+        document.getElementById('address').value.trim()
 
     );
 
-    const rawMessage =
-        messageLines.join('\n');
+    // META PIXEL LEAD
+    // Tracks form submission attempt / WhatsApp redirect.
+    // Does not confirm that the WhatsApp message was sent.
 
-    const whatsappUrl =
+    if (typeof fbq === 'function') {
+        fbq('track', 'Lead', {
+            content_name: 'Fluffy Sherpa 3 Pieces',
+            currency: 'MAD',
+            value: price
+        });
+    }
+
+    const url =
         'https://wa.me/' +
         WHATSAPP_NUMBER +
         '?text=' +
-        encodeURIComponent(rawMessage);
+        encodeURIComponent(message.join('\n'));
 
-    // Meta Pixel Lead
-    // يسجل محاولة التواصل عبر WhatsApp
-    // بعد تعبئة الفورم والتحقق من الهاتف.
-    // لا يعني بالضرورة إرسال الرسالة فعلياً.
+    window.location.assign(url);
+});
 
-    if (typeof fbq === 'function') {
+// IMAGE SLIDER
+const slider = document.getElementById('productSlider');
+const track = document.getElementById('sliderTrack');
+const slides = Array.from(
+    track.querySelectorAll('.slide')
+);
+const dotsBox = document.getElementById('sliderDots');
 
-        fbq('track', 'Lead', {
+let slideIndex = 0;
+let touchStartX = 0;
+let touchStartY = 0;
+let autoTimer;
+let sliderVisible = true;
 
-            content_name:
-                'Fluffy Pajama Set 3 Pieces',
+const reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+).matches;
 
-            content_category:
-                'Loungewear',
+// DOTS
+slides.forEach((slide, i) => {
 
-            currency: 'MAD',
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute(
+        'aria-label',
+        'الصورة ' + (i + 1)
+    );
 
-            value: price
+    button.addEventListener('click', () => {
+        showSlide(i);
+        restartAuto();
+    });
 
-        });
+    dotsBox.appendChild(button);
+});
 
+const dots = Array.from(dotsBox.children);
+
+// SHOW SLIDE
+function showSlide(i) {
+
+    slideIndex =
+        (i + slides.length) % slides.length;
+
+    track.style.transform =
+        'translateX(' + (slideIndex * 100) + '%)';
+
+    dots.forEach((dot, n) => {
+        dot.classList.toggle('active', n === slideIndex);
+
+        dot.setAttribute(
+            'aria-current',
+            n === slideIndex ? 'true' : 'false'
+        );
+    });
+
+    document.getElementById('sliderCounter')
+        .textContent =
+        (slideIndex + 1) + ' / ' + slides.length;
+}
+
+// AUTO
+function restartAuto() {
+
+    clearInterval(autoTimer);
+
+    if (!reducedMotion) {
+        autoTimer = setInterval(() => {
+
+            if (!document.hidden && sliderVisible) {
+                showSlide(slideIndex + 1);
+            }
+
+        }, 4500);
+    }
+}
+
+// ARROWS
+document.getElementById('prevSlide')
+    .addEventListener('click', () => {
+        showSlide(slideIndex - 1);
+        restartAuto();
+    });
+
+document.getElementById('nextSlide')
+    .addEventListener('click', () => {
+        showSlide(slideIndex + 1);
+        restartAuto();
+    });
+
+// TOUCH SWIPE
+slider.addEventListener('touchstart', e => {
+
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+
+}, {passive: true});
+
+slider.addEventListener('touchend', e => {
+
+    const dx =
+        e.changedTouches[0].screenX - touchStartX;
+
+    const dy =
+        e.changedTouches[0].screenY - touchStartY;
+
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+        showSlide(slideIndex + (dx < 0 ? 1 : -1));
+        restartAuto();
     }
 
-    // فتح واتساب برسالة الطلب
-    window.location.assign(whatsappUrl);
+}, {passive: true});
 
-});
+// PAUSE WHEN OUT OF VIEW
+if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+        sliderVisible = entries[0].isIntersecting;
+    }, {
+        threshold: 0.2
+    }).observe(slider);
+}
+
+// START
+showSlide(0);
+restartAuto();
 
 </script>
 
