@@ -1406,11 +1406,12 @@ form.addEventListener('submit', function(event) {
     // Does not confirm that the WhatsApp message was sent.
 
     if (typeof fbq === 'function') {
-        fbq('track', 'Lead', {
-            content_name: 'Fluffy Sherpa 3 Pieces',
-            currency: 'MAD',
-            value: price
-        });
+    fbq('track', 'Purchase', {
+        content_name: 'Fluffy Sherpa 3 Pieces',
+        currency: 'MAD',
+        value: price
+    });
+}
     }
 
     const url =
